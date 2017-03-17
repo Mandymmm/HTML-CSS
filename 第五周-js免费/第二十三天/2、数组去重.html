@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+<script>
+    var ary= [1,2,3,1,2,3];
+    var obj={};// 创建一个第三方盒子
+    for (var i=0;i<ary.length;i++){//循环数组中的每一项
+        var cur=ary[i];
+        if (obj[cur]===cur){
+            //ary.splice(i,1);
+            //i--;
+            ary[i]=ary[ary.length-1];
+            ary.length--;
+            i--;
+        }else {
+            obj[cur]=cur;
+        }
+    }
+    console.log(ary);
+    //console.dir(obj);
+    /*obj[ary[0]]=ary[0];  obj[1]=1
+    obj[ary[1]]=ary[1];  obj['a']='a'
+    obj[ary[2]]=ary[2];  obj[3]=3
+    obj[ary[3]]=ary[3];  obj['a']='a'  'a'在之前已经出现过 将这一项从ary中删除掉
+    ary.splice(3,1)  ary=[1,"a",3,2,"中",123,'123']
+
+    obj[ary[3]]=ary[3];  obj[2]=2
+    obj[ary[4]]=ary[4];  obj['中']='中'
+    obj[ary[5]]=ary[5];  obj[123]=123
+    obj[ary[6]]=ary[6];  obj[123]='123'
+    obj={
+        1:1,
+        'a':'a',
+        3:3,
+        2:2,
+        '中':'中',
+        123:123,
+        '123':'123'
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<!--<script>
+    var ary=[1,"a",3,"a",2,"中",123,'123'];//[1,2,3]
+    var obj={};
+    for (var i=0;i<ary.length;i++){
+        var cur=ary[i];// 声明一个变量 每次循环的时候 都将当前取到的ary中的值 存到这个变量中
+        // 在想obj中存储之前 需要先判断一下 obj中是不是已经存在了这项，如果存在就将ary的当前项删除掉
+        if (obj[cur]===cur){
+            ary.splice(i,1);
+            i&#45;&#45;;
+            continue;
+        }
+        obj[cur]=cur;// 将数组中的每一项即当做obj的属性名也当做obj的属性值存到obj中
+    }
+    console.log(ary);
+    //obj[ary[0]]=ary[0]
+    //obj[ary[1]]=ary[1]
+
+
+
+
+
+
+    //splice(ary[index],1)
+    // 创建一个第三方盒子 将ary中的每一项逐一的放在这个盒子中，每次放置之前都要和这个第三方盒子里面的内容进行比对，如果相等，就不将ary中的值放进去，如果不相等就一直放进去
+    // 利用对象键值对的方式
+   /* obj={
+        属性名:'属性值'，
+        1:1,
+        2:2,
+        3:3,
+        1:1  // obj之前有了 我现在就不存了 我就将数组中的这一项移除掉即可
+    }*/
+
+
+    /*var ary=[1,2,3,1,2,3,1,2,3];//[1,2,3]
+    splice(ary[3],1)
+    ary=[1,2,3,2,3,1,2,3]*/
+
+
+
+
+
+
+</script>-->
+</body>
+</html>

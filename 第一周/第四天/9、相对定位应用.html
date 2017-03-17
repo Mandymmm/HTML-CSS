@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .clearfix{*zoom:1;}
+        .clearfix:after{
+            display: block;
+            content:"";
+            clear:both;
+            height:0;
+            visibility:hidden;
+        }
+        ul{
+            margin: 0 auto;
+            padding-left: 14px;
+            list-style: none;
+            background-color: darkgrey;
+            width: 992px;
+        }
+        li{
+            float: left;
+            margin-right: 14px;/*每一个盒子距离右侧盒子的距离*/
+            margin-bottom: 14px;
+            width: 234px;
+            height: 300px;
+            background-color: white;
+        }
+        li:hover{
+            /*margin-top: -1px;*/
+            /*border-radius: 50%;*/
+            position: relative;
+            top: -2px;
+            box-shadow: -10px -20px 100px 10px #2791d0 inset;
+        }
+        p{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 40px;
+            border-bottom-left-radius: 50px;
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            background-color: #2791d0;
+        }
+    </style>
+</head>
+<body>
+<p></p>
+<ul class="clearfix">
+    <li>0001</li>
+    <li>0002</li>
+    <li>0003</li>
+    <li>0004</li>
+    <li>0005</li>
+    <li>0006</li>
+    <li>0007</li>
+    <li>0008</li>
+</ul>
+
+
+</body>
+</html>

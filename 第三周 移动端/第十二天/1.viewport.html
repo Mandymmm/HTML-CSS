@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--viewport  视口-->
+    <!--initial-scale  默认的缩放比例-->
+    <!--maximum-scale  最大缩放比例-->
+    <!--minimum-scale  最小缩放比例-->
+    <!--user-scalable  是否可缩放 yes/no   -->
+    <!--meta:vp tab 自动生成上面代码-->
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            /*width:50%;*/
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background: #00FF00;
+
+        }
+
+        /*min-width 最小宽度  >=319 */
+
+        /*@media screen and (min-width: 319px) {*/
+        /*.box {*/
+        /*background: red;*/
+        /*}*/
+        /*}*/
+
+        /*max-width 最大宽度 <=340*/
+        /*@media screen and (max-width: 340px) {*/
+        /*.box {*/
+        /*background: yellow;*/
+        /*}*/
+        /*}*/
+
+        /*320~400 之间的范围*/
+        /*@media screen and (min-width: 320px)and (max-width: 400px) {*/
+            /*.box {*/
+                /*background: #ccc;*/
+            /*}*/
+        /*}*/
+
+        @media (device-height: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+            /* 兼容iphone4/4s */
+            .box {
+                border: 20px solid red;
+            }
+        }
+
+        @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+            /* 兼容iphone5 */
+            .box {
+                border: 20px solid yellow;
+            }
+        }
+
+        @media (device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+            /* 兼容iphone 6 */
+             .box{
+                 border:20px solid blue;
+             }
+        }
+
+        @media (device-width: 414px) and (-webkit-min-device-pixel-ratio: 3.0) {
+            /* 兼容iphone6 plus */
+            .box{
+                border:10px solid pink;
+            }
+        }
+
+        /*总结:
+        1.min-width  大于等于
+        2.max-width  小于等于
+        3.@media screen and (min-width: 320px)and (max-width: 400px)   区间取值范围
+        */
+        /*320px~640px*/
+        /*>640px  适配ipad*/
+
+        /*640px、414px、375px、*/
+        /*1.先给元素设置默认样式:*/
+        /*2.媒体查询单独设置样式: 640px、414px、375px*/
+        /*@media screen and (min-width: 640px){*/
+        /*大于等于 640px(ipad)*/
+        /*}*/
+        /*@media screen and (min-width: 414px){*/
+        /*大于等于414px(iphone6 plus)*/
+        /*}*/
+        /*@media screen and (min-width: 375px){*/
+        /*大于等于375px (iphone6)*/
+        /*}*/
+
+        /*@media媒体查询
+        screen 屏幕  设备的类型  media type
+        and 和 连接    not only  仅有(指定设备类型)
+         (min-width: 375px){}
+
+        */
+
+        /*3g*/
+        /*m*/
+        /*touch*/
+        /*移动端*/
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <!--<ul>-->
+    <!--<li>46岁黎姿与老公巴黎购物 还是那么美</li>-->
+    <!--<li>46岁黎姿与老公巴黎购物 还是那么美</li>-->
+    <!--<li>46岁黎姿与老公巴黎购物 还是那么美</li>-->
+    <!--<li>46岁黎姿与老公巴黎购物 还是那么美</li>-->
+    <!--</ul>-->
+</div>
+
+</body>
+</html>

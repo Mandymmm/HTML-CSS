@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+99 选项卡 去重
+
+复习：
+1、数据类型
+基本数据类型和引用数据类型
+基本：number  string  boolean null undefined
+引用数据类型：
+对象object：Array Object RegExp Math Date
+函数function
+
+2、数据类型的检测：
+typeof()--字符串中包裹着数据类型
+instanceof
+constructor
+Object.prototype.toString.call()
+
+3、一个值判断真假：0 NaN null undefined ''为假，其余都为真
+两个值比较：
+对象==对象 false
+{}  []
+对象==字符串  对象-》字符串 {}--'[object Object]'
+[]-->''
+对象==布尔  对象-》字符串-》数字  布尔-》数字
+true--》1  false--》0  ''-->0
+对象==数字  对象-》字符串-》数字
+布尔==数字  布尔-》数字
+字符串==数字 字符串-》数字
+布尔==字符串 字符串-》数字 布尔-》数字
+null==undefined true
+null和undefined与其他任何数据类型比较 为false
+NaN==NaN  false
+
+!{}==![] -->true
+![]==false-->true
+![]==0 -->true
+[]=='0'-->false
+
+4、数组
+1）push()--向数组末尾添加新的数组项，返回值数组的长度，原数组改变
+ary.push(1,2,3,4)
+2）pop()--删除数组最后一项，返回值删除项，原数组改变
+ary.pop()
+3）unshift()--向数组开头位置添加，返回值是数组的长度，原数组改变
+ary.unshift(1,2)
+4）shift()--删除数组第一项，返回值删除项，原数组改变
+ary.shift()
+5）splice()--原数组改变
+splice(n,m)--从索引n开始，删除m项，返回值以数组的形式返回删除项
+splice(n)--从索引n开始删除到最后
+splice(0)--原数组清空，返回一个和原来一样的新数组
+splice()--原数组不变，返回一个空数组
+
+splice(n,m,x)--从索引n开始，删除m项，将x补在删除位置，
+splice(n,0,x)--将x添加到n之前
+splice(0,0,x)--将x添加到数组第一项之前
+splice(ary.length-1,1)--删除数组的最后一项
+ary.splice(ary.length,0,x); 向数组末尾增加
+
+6）slice(n,m)--从索引n开始，查找到索引m处，不包含m，将查找到的以新数组返回，原数组不变
+slice(n)--从索引n开始找到末尾
+slice(0)/slice()--克隆一个新数组
+
+查找从第n项，到第m项（包含n和m）
+ary=[0,1,2,3,4,5]
+     1,2,3,4,5,6
+slice(n-1,m)
+
+7)concat--数组的拼接
+ary.concat(ary1,[1]);
+concat()克隆
+
+8）数组转为字符串
+toString()
+join('符号')
+
+9）indexOf/lastIndexOf （字符串中也有这个方法，是兼容的）
+var ary=[1,3,4,5,1]
+ary.indexOf(1)--0
+ary.indexOf(6)-->-1
+ary.lastIndexOf(1)--4
+
+10)forEach/map 遍历数组的每一项
+forEach(function(){arguments})//没有返回值
+map(function(){arguments})//有返回值
+
+11）数组的排序
+reverse()--将数组从后向前排（和大小无关）
+sort()--按照第一位数字的大小排序，如果是字母按照顺序排序
+处理数组数字的排序
+sort(function(a,b){return a-b})
+sort(function(a,b){return b-a})
+
+5、函数
+参数  形参和实参
+形参用来接收实参
+arguments用来接收实参，不用定义形参
+
+return 返回函数里面的‘值’
+谁来接收 函数的执行结果
+return后面的函数体中的代码不执行
+
+函数名代表函数本身********
+function sum(){}
+obox.onclick=sum;
+obox.onclick=function(){
+    sum();
+}
+obox.onclick=sum();
+
+特点：
+一次定义，多次独立执行（多次调用）
+任意数求和
+
+6、自定义属性
+当对象的内置属性满足不了我们的需求，我们可以给对象添加一对新的属性
+
+className='bg1'--内置属性
+给当前对象增加一个属性，index='bg1'
+className='bg2'
+className=this.index;
+
+<!--DOM-->
+
+if('3px'*3)console.log('ok')
+if('3px'+3)console.log('ok')
+
+Math.ceil(1.2)--2
+[1~2]
+Math.ceil(-1.2)-->-1
+[-2~-1]
+3.4
+3.6
+
+
+
+
+
+
+</body>
+</html>

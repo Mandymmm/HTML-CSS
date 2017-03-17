@@ -1,0 +1,24 @@
+window系统操作.txt  ---  文件名
+.xxx --- 后缀名
+
+1、打开资源管理器【我的电脑】 --  window键+E
+2、ctrl+C  复制
+3、ctrl+V  粘贴
+4、ctrl+X  剪切
+5、alt+tab  操作应用的切换
+6、window+tab 操作应用的切换
+7、Esc  退出
+8、delete 删除
+9、backspace 删除 【返回上一步 -- 文件夹中】
+10、ctrl+Z  返回上一步
+11、window+R 打开运行窗口
+12、ctrl+S 保存
+13、ctrl+shift+S 另存为
+14、ctrl+alt+delete  打开任务管理器 【在任务栏点击鼠标右键，选择任务管理器】
+
+
+
+
+
+
+

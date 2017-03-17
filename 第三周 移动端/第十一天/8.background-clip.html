@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>background-clip</title>
+    <style type="text/css">
+        h2 {
+            font-size: 16px
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 10px dotted #3a96ec;
+            background: #2a2a2a;
+            color: #fff;
+            background: url(img/meinv.jpg) no-repeat;
+
+        }
+
+        .border-box .box {
+            background-clip: border-box;
+        }
+
+        .padding-box .box {
+            background-clip: padding-box;
+        }
+
+        .content-box .box {
+            background-clip: content-box;
+        }
+
+        .text .box {
+            width: auto;
+            height: auto;
+            background-repeat: repeat;
+            /*只支持webkit内核的浏览器*/
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 120px;
+        }
+
+        .text .box {
+            animation: cliptext 20s linear infinite;
+            -webkit-animation: cliptext 20s linear infinite;
+        }
+
+        @-webkit-keyframes cliptext {
+            0% {
+                background-position: left top;
+            }
+            50% {
+                background-position: right top;
+            }
+            100% {
+                background-position: left top;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="border-box">
+    <h2>border-box:从border区域（不含border）开始向外裁剪背景</h2>
+
+    <div class="box"></div>
+</div>
+<div class="padding-box">
+    <h2>padding-box:从padding区域（不含padding）开始向外裁剪背景(裁剪的是border)</h2>
+
+    <div class="box"></div>
+</div>
+<div class="content-box">
+    <h2>content-box:从content区域开始向外裁剪背景(裁剪的是padding+border)</h2>
+
+    <div class="box"></div>
+</div>
+<div class="text">
+    <h2>text:从前景内容的形状作为裁剪区域向外裁剪背景</h2>
+
+    <div class="box">遮罩效果</div>
+</div>
+</body>
+</html>

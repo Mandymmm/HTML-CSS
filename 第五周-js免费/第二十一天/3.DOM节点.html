@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM节点</title>
+</head>
+<body>
+<div id="parent">
+    <ul id="list">
+        <!--我是一个注释-->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <p>ppp</p>
+    <input type="text">
+</div>
+<script>
+    var parent=document.getElementById('parent');
+    console.log(parent.childNodes);//所有子节点
+    //[text, ul, text, p, text, input, text]
+    console.log(parent.children);
+    //[ul, p, input] 所有元素子节点
+    console.log(list.parentNode);
+    console.log(list.previousSibling);//#text
+    console.log(list.previousElementSibling);//null
+
+</script>
+</body>
+</html>

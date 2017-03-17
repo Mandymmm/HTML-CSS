@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for in</title>
+</head>
+<body>
+<script>
+    var obj={
+        name:'珠峰',
+        age:'9年',
+        url:'www.zhufengpeixun.cn'
+    };
+    for (var key in obj){
+        //key 变量  代表这个对象的属性名
+        console.log(obj[key]);
+        //在遍历对象时，不知道这个对象的属性名是否存在数字，所以只能用对象名[变量名]的形式获取属性值
+        //obj[key] 中括号中是变量 而不是一个属性 所以不能加引号
+    }
+    //for in循环只能遍历可枚举属性 （自定义属性）
+</script>
+</body>
+</html>

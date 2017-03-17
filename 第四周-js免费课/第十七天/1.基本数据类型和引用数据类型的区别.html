@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本数据类型和引用数据类型的区别</title>
+</head>
+<body>
+<script>
+    /*var num1=1;
+    var num2=num1;//num2=1
+    num2+=4;//num2=1+4=5
+    console.log(num1,num2);//1 5*/
+
+    /*var num1=1;
+    var num2=num1;//num2=1
+    num1+=4;//num1=1+4=5
+    console.log(num1,num2);//5 1*/
+
+
+
+    /*var obj1={//引用数据类型
+        name:'珠峰培训'
+    };
+    var obj2=obj1;
+    obj1.name='珠峰';
+    console.log(obj1,obj2);*/
+
+    /*1、浏览器提供给代码运行的环境，代码在这里从上到下执行
+    2、当遇到引用数据类型的时候，浏览器会开辟一个新的内存空间，将引用数据类型中的代码当做字符串存到这个里面
+    3、开辟的空间会返回给对象一个地址，那么此时这个对象储存的不是代码而是一个地址
+    4、当将这个对象赋值给另一个对象的时候，其实赋值过程是将地址传递给另一个对象了
+    也就是说，这两个对象将要访问同一个地址，也就是说他们操作的是同一份代码*/
+
+
+    //基本数据类型
+    /*var str1='abc';
+    var str2=str1;
+    str2+='123';
+    console.log(str1,str2);// 'abc'  'abc123'*/
+
+    /*var str1='abc';
+    str1+=true;
+    console.log(str1);//'abctrue'*/
+
+</script>
+</body>
+</html>

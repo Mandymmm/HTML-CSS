@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>box-shadow</title>
+    <style>
+        .box{
+            margin-top: 30px;
+            width: 400px;
+            text-align:center;
+            padding: 10px;
+            background: #eee;
+        }
+        .box1{
+            box-shadow: 5px 5px rgba(0, 0, 0, .6);
+        }
+        .box2{
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, .6);
+        }
+        .box3{
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .6);
+        }
+        .box4{
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, .6) inset;
+            /*IE6-8下采用filter滤镜进行处理*/
+            filter: progid:DXImageTransform.Microsoft.Shadow(color=green, Direction=5px, Strength=5px);
+        }
+        .box5{
+            box-shadow:
+            0 0 5px 3px rgba(255, 0, 0, .6),
+            0 0 5px 6px rgba(0, 182, 0, .6),
+            0 0 5px 10px rgba(255, 255, 0, .6);
+        }
+    </style>
+</head>
+<body>
+<div class="box box1">外阴影常规效果</div>
+<div class="box box2">外阴影模糊效果</div>
+<div class="box box3">外阴影模糊外延效果</div>
+<div class="box box4">内阴影效果</div>
+<div class="box box5">外阴影模糊效果</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div>ul>li{border-width: 3px;border-style:dashed;border-color:red;}
+        /*只有div下第一层级ul下第一层级li的样式*/
+        li{border-width: 5px;border-style:solid;border-color:blue;}
+        /*当前文档下所有li*/
+        div>ul>li>ul>li{}
+        .list1{}
+        .list2{}
+        /*.m-100{margin-top:100px;}
+        .m100{margin: 100px;}*/
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li class="list1">边框虚线
+            <ul>
+                <li class="list2">边框实线</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

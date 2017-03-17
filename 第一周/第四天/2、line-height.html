@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行高</title>
+    <style>
+        div{
+            background-color: yellow;
+            line-height: 60px;
+            font-family: "Microsoft YaHei";
+        }
+    </style>
+</head>
+<body>
+<div>
+    文字文字 默认文字大小是16px，默认是宋体 18px
+    字体为微软雅黑的时候字体大小16px 所占的高度是21px
+    火狐16px 默认字体是微软雅黑 所占高度是22px
+</div>
+<p style="height: 50px;background-color: antiquewhite;line-height: 50px;font-size: 30px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+    文字文字 默认文字大小是16px，默认是宋体 18px
+    字体为微软雅黑的时候字体大小16px 所占的高度是21px
+    火狐16px 默认字体是微软雅黑 所占高度是22px
+</p>
+<style>
+    .text{
+        width: 300px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        background-color: red;
+    }
+</style>
+<p class="text">
+    文字文字 默认文字大小是16px，默认是宋体 18px
+    字体为微软雅黑的时候字体大小16px 所占的高度是21px
+    火狐16px 默认字体是微软雅黑 所占高度是22px
+</p>
+</body>
+</html>

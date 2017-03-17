@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+ary=[2,1,4,6,5,7,0];
+newAry=[2]
+i=1 ary[1]=1
+1<2  newAry.splice(0,0,ary[1])
+newAry=[1,2]  break 跳出循环 length=2
+i++ i=2
+i=2 ary[2] = 4  j++ j=1
+i=2 4 neAry[1]=2 1===newAry.length-1
+newAry.push(ary[2]);
+newAry=[1,2,4] break;  length=3
+i++ i=3  6
+j=0 1<6  j++ j=1
+j=1 2<6  j++ j=2
+j=2 4<6  newAry.push(ary[3]);
+newAry=[1,2,4,6] break length=4
+i++ i=4 5
+j=0  1<5 0==4-1 j++ j=1
+j=1  2<5 1==4-1 j++ j=2
+j=2  4<5 2==4-1 j++ j=3
+j=3  6>5 newAry.splice(3,0,ary[i]) break
+newAry=[1,2,,4,5,6]
+
+
+
+</body>
+</html>

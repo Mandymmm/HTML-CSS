@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取指定元素子节点</title>
+</head>
+<body>
+<div>
+    <p>p1</p>
+    <ul><li>li1</li></ul>
+    <a href="">aaa</a>
+</div>
+<script>
+    var oDiv=document.querySelector('div');//一个元素对象
+    // div  oDiv
+    // var oDivs=document.getElementsByTagName('div');//一组元素对象
+    // [div]  -- oDivs[0]
+    function nodeAll(ele,tagName) {
+        var chAll=ele.childNodes;// 获取所有子节点 [类数组]
+        var ary=[]; // push() 在数组末尾增加
+        for (var i=0;i<chAll.length;i++){
+            if (chAll[i].nodeType===1){
+                if (tagName){// 传进了第二个参数
+                    if (chAll[i].nodeName.toLowerCase()===tagName){
+                        ary.push(chAll[i]);
+                    }
+                }else {
+                    ary.push(chAll[i]);
+                }
+            }
+        }
+        return ary;
+    }
+    console.log(nodeAll(oDiv));
+    //tagName 存在的时候 才比较
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>word-wrap 文本换行</title>
+    <style type="text/css">
+        p{
+            width:100px;
+            border:1px solid #000;
+
+        }
+        .normal p{
+            word-wrap:normal;
+        }
+        .break-word p{
+            word-wrap:break-word;
+        }
+    </style>
+</head>
+<body>
+<div class="normal">
+    <h4>normal：纯英文</h4>
+    <p>dggdgagdgfgdfgsdgdfggdfgdgdgfdgdfsdf</p>
+</div>
+<div class="normal">
+    <h4>normal：纯文字</h4>
+    <p>普通普通普通普通普通普通普通普通普通普通普通普通普通普通</p>
+</div>
+<div class="normal">
+    <h4>normal：中英文混排</h4>
+    <p>普通普通普通普通dgdfggdfgdgdgfdgd</p>
+</div>
+<div class="break-word">
+    <h4>break-word：纯英文</h4>
+    <p>jdhfskdhfksdhflsdfsdfsdfsafsdfsdfds</p>
+</div>
+<div class="break-word">
+    <h4>break-word：纯文字</h4>
+    <p>普通普通普通普通普通普通普通普通普通普通普通普通普通普通普通普通普通普通普通普通普通</p>
+</div>
+<div class="break-word">
+    <h4>break-word：中英文混排</h4>
+    <p>普通普通普通afsdfsdfdsfsdfsdfsdfsdfdsfdsfsdfs</p>
+</div>
+</body>
+</html>

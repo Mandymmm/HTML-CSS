@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 快速排序 冒泡排序 数组去重
+//   快速排序思想：在数组中 取出中间位置的那个数 作为基准点 ，然后把数组中剩下的依次和这个基准点进行比较，比基准点小的放在 左边数组集合 比基准点大的放在右边的数组集合，左右两边集合 按照以上排序思想进行排序  直到数组集合中只剩下一个或空 代表排序结束 然后最终拼接在一起
+
+//    arr.sort(function (a, b) {
+//          return a - b;
+//    })
+//     1. 取出数组中中间位置那个数 ： leng/2 => 7/2 => Math.floor(length/2) => 3 arr[3] => arr.splice(3,1) => [11] => [11][0] =>11
+//    2.for 依次拿出 和基准点进行比较 left []  right[]
+    var arr = [12, 10, 22, 11, 8, 9, 2];
+    function quickSort(arry) {
+         if(arry.length <= 1){
+             return arry;
+         }
+
+         var midInd = Math.floor(arry.length/2); // 得到中间位置的索引
+         var midNum = arry.splice(midInd,1)[0]; // 把中间这个数在数组中取出来 作为基准点
+         var left = [];  // 用来存放比基准点小的
+         var right = []; // 用来存放比基准点大的
+         for(var i = 0; i < arry.length; i++){ // 把数组中里每一项依次拿出 和基准点 进行比较
+             var cur = arry[i];
+                 if(cur < midNum){ // 比基准点小的 放到 left集合
+                     left.push(cur);
+                 } else {  // 比基准点大的 放到 right 集合
+                     right.push(cur);
+                 }
+         }
+//                [8]left最终返回值.concat(midNum, right最终返回值)
+         return quickSort(left).concat(midNum,quickSort(right));
+
+    }
+    console.log(quickSort(arr));
+</script>
+</body>
+</html>

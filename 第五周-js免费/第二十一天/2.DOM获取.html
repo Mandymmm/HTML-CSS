@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM获取</title>
+</head>
+<body>
+<div id="box">
+    <p name="p1">001</p>
+    <input type="submit" name="p1">
+    <p>002</p>
+    <p>003</p>
+    <p>004</p>
+    <p>005</p>
+    <p>006</p>
+    <p>007</p>
+    <p>008</p>
+    <p>009</p>
+    <p>010</p>
+</div>
+<div class="box2">
+    <p>001</p>
+    <p>002</p>
+    <p>003</p>
+    <p>004</p>
+    <p>005</p>
+    <p>006</p>
+    <p>007</p>
+    <p>008</p>
+    <p>009</p>
+    <p>010</p>
+</div>
+<!--<div id="box">
+    2
+</div>-->
+<script type="text/javascript">
+    //document.getElementById('box').style.height='100px';
+    //document.getElementById('box').style.backgroundColor='red';
+    var oBox=document.getElementById('box');
+    var oPs=oBox.getElementsByTagName('p');
+    //[p,p,p,p,p,p,p,p,p,p,p]
+    oPs['0'].style.backgroundColor='red';
+    oPs.item(1).style.backgroundColor='yellow';
+    var oP1=document.getElementsByName('p1');
+</script>
+</body>
+</html>

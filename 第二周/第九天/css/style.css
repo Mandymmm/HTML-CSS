@@ -1,0 +1,360 @@
+body, div, ul, ol, li, table, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, form, input {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img, a {
+    border: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: normal;
+}
+
+em, i {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font: 12px/1.5 "Microsoft YaHei";
+    /*body下所有的文字都会继承这个属性值*/
+    /*font-size: 12px;
+    line-height: 1.5em;
+    font-family: "Microsoft YaHei";*/
+    /*font: 12px "Microsoft YaHei";*/
+    /*复合写法 不写的位置也有默认值*/
+    /*background: url("../img/xxx") repeat 0 0 transparent;*/
+    /*repeat 0 0 transparent 默认值*/
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.main {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.sub-header {
+    border-bottom: 1px solid #ededed;
+    min-width: 1200px;
+    height: 29px;
+}
+
+.sub-header .left, .sub-header li {
+    position: relative;
+    float: left;
+}
+
+.sub-header .right {
+    float: right;
+}
+
+.sub-header li:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 1px;
+    height: 11px;
+    background: #c8c8c8;
+}
+
+.sub-header li a {
+    position: relative;
+    z-index: 2;
+    padding: 0 10px;
+    line-height: 29px;
+    color: #939393;
+}
+
+.sub-header .no-bg:before {
+    display: none;
+}
+
+.sub-header .no-bg a {
+    padding-left: 0;
+}
+
+.sub-header .icon-btn {
+    display: inline-block;
+    margin-left: 11px;
+    width: 7px;
+    height: 4px;
+    background: url("../img/sprites3.png") no-repeat;
+    background-position: -34px 0;
+    vertical-align: middle;
+}
+
+.sub-header li:hover .icon-btn {
+    background-position: 0 0;
+}
+
+.sub-header .hid-list {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    right: -1px;
+    border: 1px solid #ededed;
+    border-top: none;
+    padding: 32px 0 2px;
+    background: #fff;
+}
+
+.sub-header .hid-list a {
+    display: block;
+    line-height: 25px;
+}
+
+.sub-header li:hover .hid-list {
+    display: block;
+}
+
+.sub-header .right .no-bg a {
+    color: #595959;
+}
+
+.sub-header a:hover, .sub-header .right .no-bg a:hover {
+    color: #ca151e;
+}
+
+.header .logo {
+    float: left;
+    margin-right: 105px;
+}
+
+.header form {
+    float: left;
+    position: relative;
+    margin-top: 36px;
+}
+
+.header input[type=text] {
+    float: left;
+    border: 1px solid #eee;
+    padding: 0 10px;
+    width: 373px;
+    height: 38px;
+    line-height: 38px;
+    outline: none;
+}
+
+.header input[type=button] {
+    float: left;
+    border: 1px solid #eee;
+    border-left: none;
+    width: 39px;
+    height: 40px;
+    outline: none;
+    background: url("../img/icon47.png") no-repeat;
+    background-position: -2px 13px;
+    cursor: pointer;
+}
+
+.header input[type=button]:hover {
+    background-color: #666;
+    background-position: 12px 13px;
+}
+
+.header form p {
+    position: absolute;
+    top: 13px;
+    right: 60px;
+}
+
+.header form a {
+    margin-left: 16px;
+    padding: 0 5px;
+    line-height: 14px;
+    color: #999;
+    background: #eee;
+}
+
+.header form a:hover {
+    color: #fff;
+    background: #ca151e;
+}
+
+.header input[type=text]:focus + p {
+    display: none;
+}
+.header .car{
+    position: relative;
+    float: left;
+    margin: 36px 0 0 7px;
+    border: 1px solid #eee;
+    width: 197px;
+    height: 38px;
+}
+.header .car:before{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 98px;
+    width: 1px;
+    height: 12px;
+    background: #eee;
+}
+.header .car .left,.header .car .right{
+    width: 98px;
+    line-height: 38px;
+    background: #fff;
+    text-align: center;
+}
+.header .car .left{
+    float: left;
+}
+.header .car .right{
+    float: right;
+}
+.header .car .title{
+    color: #333;
+}
+.header .car .icon-btn{
+    display: inline-block;
+    margin-left: 6px;
+    border: 3px solid transparent;
+    border-top-color: #bdbdbd;
+
+}
+.header .number{
+    position: absolute;
+    top: -7px;
+    right: 6px;
+    border-radius: 2px;
+    padding: 0 2px;
+    height: 15px;
+    line-height: 15px;
+    background: #ca141d;
+    color: #fff;
+}
+.header .number i{
+    position: absolute;
+    bottom: -4px;
+    border: 2px solid transparent;
+    border-top-color: #ca141d;
+}
+.car .hid-list{
+    display: none;
+    position: absolute;
+    top: 39px;
+    left: -1px;
+    right: -1px;
+    border: 1px solid #eee;
+    border-top: none;
+}
+.car .hid-list .top{
+    border-bottom: 1px solid #eee;
+    line-height: 40px;
+    text-align: center;
+    color: #666;
+}
+.car .top a{
+    padding: 0 7px;
+    color: #595959;
+}
+.car .list{
+    padding-top: 28px;
+}
+.car .list li{
+    float: left;
+    margin-bottom: 25px;
+    width: 98px;
+    line-height: 16px;
+    text-align: center;
+}
+.car .list .fl-r{
+    position: relative;
+    float: right;
+}
+.car .list .fl-r:before{
+    display: block;
+    content: "";
+    position: absolute;
+    top:1px;
+    left: -1px;
+    width: 1px;
+    height: 14px;
+    background: #eee;
+}
+.car .list a{
+    color: #595959;
+}
+.car .join{
+    display: block;
+    margin-bottom: 11px;
+}
+.car .left:hover .line,.car .right:hover .line{
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    z-index: 1;
+    height: 1px;
+    width: 98px;
+    background: #fff;
+}
+.car .right:hover .line{
+    left: auto;
+    right: 0;
+}
+.car:hover{
+    background: #eee;
+}
+/*.car .left:hover .title:after{
+    position: absolute;
+    display: block;
+    content: "";
+    right: 98px;
+    top: 0;
+    width: 1px;
+    height: 38px;
+    background: #000;
+}*/
+.car .left:hover .hid-list{
+    display: block;
+}
+.car a:hover,.car .title:hover{
+    color: #e01d20;
+    text-decoration: underline;
+}
+.car-hid{
+    display: none;
+    position: absolute;
+    right: -1px;
+    border: 1px solid #eee;
+    width: 466px;
+    height: 110px;
+    background: #fff;
+}
+.car .right:hover .car-hid{
+    display: block;
+}
+
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html><html><head><title>第七天</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style>
+.note-content  {font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif;}
+
+</style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="第七天">第七天</h1>
+
+<h2 id="ps快捷键">ps快捷键</h2>
+
+<p>T                文字工具 <br>
+ctrl+enter  取消选择文字</p>
+
+<h2 id="background-背景">background 背景</h2>
+
+
+
+<h3 id="background-color">background -color</h3>
+
+<p>background -color:#ff6600 <br>
+background -color:rgb(255,255,255) 白色 <br>
+background -color:rgb(0,0,0) 黑色 <br>
+background -color:rgba(0,0,0,0.2) <br>
+a是指透明度 范围0-1</p>
+
+<h3 id="background-image-url珠峰pc项目imglogopng">background-image: url(“珠峰pc项目/img/logo.png”);</h3>
+
+<p>引入背景图片 <br>
+background-image: url(“珠峰pc项目/img/logo.png”),url(“0df431adcbef76094479cc212bdda3cc7cd99e19.jpg”); <br>
+可以引入多张图片，先引入的图片会覆盖在后引入图片的上面</p>
+
+<h3 id="background-repeat-no-repeat">background-repeat: no-repeat;</h3>
+
+<p>背景图片平铺 <br>
+no-repeat 不进行平铺 <br>
+repeat-x   x轴平铺 <br>
+repeat-y   y轴平铺 <br>
+如果不写默认是repeat 平铺 <br>
+background-repeat: no-repeat,repeat; <br>
+可以控制多个图片的平铺方式</p>
+
+<blockquote>
+  <p>引入多个图片的方法，ie低版本浏览器不支持</p>
+</blockquote>
+
+
+
+<h3 id="background-position-10px-30px">background-position: 10px 30px;</h3>
+
+<p>背景图片的定位 <br>
+top bottom left right center 可以两两组合 <br>
+支持数值 <br>
+第一个值是x轴 从左向右 <br>
+第二个值是y轴 从上到下 <br>
+background-position:center center; 盒子的中心与图片的中心重合 </p>
+
+<h3 id="background-size-247px-440px">background-size: 247px 440px;</h3>
+
+<p>背景图片的大小 第一个值是指宽度 第二个值是指高度 <br>
+cover此时会保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小。 <br>
+contain 此时会保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小。 <br>
+ie低版本浏览器不支持</p>
+
+<h3 id="background-origin">background-origin</h3>
+
+<p>指定背景图像的定位区域</p>
+
+<ul><li>padding-box   背景图像填充框的相对位置</li>
+<li>border-box    背景图像边界框的相对位置</li>
+<li>content-box   背景图像的相对位置的内容框 <br>
+ie低版本浏览器不支持</li>
+</ul>
+
+
+
+<h3 id="background-linear-gradientto-bottomffffffff6700">background: linear-gradient(to bottom,#ffffff,#ff6700);</h3>
+
+<p>线性渐变</p>
+
+<h3 id="雪碧图">雪碧图</h3>
+
+<p>将多个小图片放在一个大的透明图片文件中，调取时，统一调取这张图片，按照图片位置的定位来展现其中一部分 <br>
+减少http请求，优化代码</p></div></body></html>

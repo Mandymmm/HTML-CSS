@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style>
+        .box{
+            border-width: 20px;
+            border-color: red;
+            border-style: solid;
+            padding: 50px;
+            width: 200px;
+            height: 200px;
+            margin: 70px;
+        }
+        .content{
+            border-color: green;
+            border-width: 1px;
+            border-style:dashed;
+            width: 198px;
+            height: 198px;
+        }
+        span{
+            display: inline-block;
+/*span是行内元素，要转换成行内块级元素以后，再定义宽度、高度和margin、padding的上下值，才会起作用；否则虽然浏览器可以识别，但是不起作用（比如margin-top不会起到撑开的作用）*/
+            margin: 60px;
+            padding: 50px;
+            width: 100px;
+            height: 100px;
+            border: 10px solid pink;
+        }
+        input{
+            margin:50px;
+            padding:30px;
+            height:20px;
+            width:60px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" />
+
+<div class="box" style="margin-bottom:20px;">
+    <div class="content">
+
+    </div>
+</div>
+
+<div class="box" style="margin-top: 20px">
+    <div class="content">
+    </div>
+</div>
+<span>fff</span>
+<span>sss</span>
+<p style="background-color: yellow;font-size: 20px;">11111</p>
+<ul>
+    <li>1111</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>gradient</title>
+    <style type="text/css">
+        div{
+            width:200px;
+            height:100px;
+            margin-bottom:20px;
+        }
+        .box1{
+            background:linear-gradient(180deg,#fff, #333);
+            /*180deg 从上开始*/
+        }
+        .box2{
+            background:linear-gradient(0deg,#fff, #333);
+            /*0deg 从下开始*/
+        }
+        .box3 {
+            background: linear-gradient(#000, #f00 50%, #090);
+        }
+        .box4 {
+            background: linear-gradient(0deg, #000 20%, #f00 50%, #090 80%);
+        }
+        .box5 {
+            background: linear-gradient(45deg, #000, #f00 50%, #090);
+        }
+        .box6 {
+            background: linear-gradient(to top right, #000, #f00 50%, #090);
+        }
+        
+        .box7{
+            /*background: -webkit-gradient(linear,center bottom ,center top,from(#007aff),to(#008000));*/
+        background:-webkit-linear-gradient(145deg,#007aff,#008000,#066dc4,#000)
+            /*角度0-360  方向(top bottom left right)*/
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+<div class="box6"></div>
+<div class="box7"></div>
+</body>
+</html>

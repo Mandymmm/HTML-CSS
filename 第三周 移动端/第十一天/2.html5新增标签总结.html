@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius:10px;
+        }
+
+        #header, #nav, #footer, .main .article, .main #sidebar {
+            background: #595959;
+        }
+
+        #header, #nav, #footer {
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 auto;
+        }
+
+        #nav {
+            margin: 15px auto 0
+        }
+
+        .main {
+            width: 500px;
+            height: 200px;
+            margin: 15px auto;
+        }
+
+        .main .article {
+            float: left;
+            width: 350px;
+            height: 180px;
+            padding:20px 0 0;
+        }
+        .main .article .section{
+            width:200px;
+            height:100px;
+            line-height:100px;
+            margin:20px auto 0;
+            background: #3b3b3b;
+        }
+
+        .main #sidebar {
+            float: right;
+            width: 135px;
+            height: 200px;
+            line-height:200px;
+
+        }
+    </style>
+</head>
+<body>
+<p style="text-align:center;color:#000;line-height:60px;">普通的页面布局方式</p>
+<div id="header">id="header"</div>
+<div id="nav">id="nav"</div>
+<div class="main">
+    <div class="article">class="article"
+        <div class="section">class="section"</div>
+    </div>
+    <div id="sidebar">id="sidebar"</div>
+</div>
+<div id="footer">id="footer"</div>
+
+<br/>
+<br/>
+<br/>
+
+<p style="text-align:center;color:#000;line-height:60px;">html5新增标签布局方式</p>
+<style>
+    #header1, #nav1, #footer1, .main .article, .main #sidebar1 {
+        background: #595959;
+    }
+
+    #header1, #nav1, #footer1 {
+        width: 500px;
+        height: 50px;
+        line-height: 50px;
+        margin: 0 auto;
+    }
+
+    #nav1 {
+        margin: 15px auto 0
+    }
+
+    .main {
+        width: 500px;
+        height: 200px;
+        margin: 15px auto;
+    }
+
+    .main .article {
+        float: left;
+        width: 350px;
+        height: 180px;
+        padding:20px 0 0;
+    }
+    .main .article .section{
+        width:200px;
+        height:100px;
+        line-height:100px;
+        margin:20px auto 0;
+        background: #3b3b3b;
+    }
+
+    .main #sidebar1 {
+        float: right;
+        width: 135px;
+        height: 200px;
+        line-height:200px;
+
+    }
+</style>
+<div id="header1">header</div>
+<div id="nav1">nav</div>
+<div class="main">
+    <div class="article">article
+        <div class="section">section</div>
+    </div>
+    <div id="sidebar1">aside</div>
+</div>
+<div id="footer1">footer</div>
+
+
+
+</body>
+</html>

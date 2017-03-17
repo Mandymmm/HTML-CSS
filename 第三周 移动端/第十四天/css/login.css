@@ -1,0 +1,91 @@
+.loginBox .login-pic {
+    width: 1.22rem;
+    height: 1.22rem;
+    margin: .96rem auto 1.18rem;
+}
+
+.loginBox .login-pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-border-raidus: 50%;
+}
+
+.loginForm {
+    padding: 0 .4rem;
+}
+
+.loginForm .iptBox {
+    height: 0.8rem;
+    padding: 0 .3rem;
+    margin-bottom: .4rem;
+    line-height: 0.8rem;
+    border: 1px solid #d0d0d0;
+    font-size: .24rem;
+    color: #777;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.loginForm .iptBox span {
+    display: inline-block;
+    width: .8rem;
+}
+
+.loginForm .iptBox input {
+    border: 0;
+}
+
+.loginForm .iptBox:nth-child(2) {
+    margin-bottom: 0;
+}
+
+.link-reg, .find-psd {
+    font-size: .24rem;
+    color: #188ae4;
+}
+
+.login-btn-box {
+    width: 100%;
+    height: .8rem;
+    line-height: .8rem;
+    margin-top:1.03rem;
+    background: #188ae4;
+    color: #fff;
+    font-size: .3rem;
+    text-align: center;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+
+}
+.link-reg{
+    float:left;
+    margin-top:.2rem;
+}
+.find-psd{
+    float:right;
+    margin-top:.2rem;
+}
+
+.login-btn-box a {
+    color: #fff;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    html {
+        font-size: 58.59375px
+    }
+}
+
+@media screen and (min-width: 414px) {
+    html {
+        font-size: 64.6875px
+    }
+}

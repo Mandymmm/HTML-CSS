@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+<script>
+    // 原理 在一个字符串中，通过索引查找字符，再将字符放到一个新的字符串中
+    var str='珠峰培训zhufengpeix';
+    // 通过索引查找字符串中的指定字符  charAt(index)
+    // 排列组合
+    // 取随机整数
+    var newStr='';
+    while (newStr.length<4){
+        var eg=Math.round(Math.random()*(str.length-1));
+        var val=str.charAt(eg);
+        if(newStr.indexOf(val)===-1){
+            newStr+=val;
+        }
+    }
+    document.body.innerText=newStr;
+    /*var eg=Math.round(Math.random()*(str.length-1));
+    var val=str.charAt(0);
+    var val1=str.charAt(5);
+    var val1=str.charAt(5);
+    var val1=str.charAt(5);*/
+</script>
+<!--<script>
+    // 验证码的取值范围
+    var str='abcdefg1234567890一二三四五六七八九十';
+    //charAt(索引) &ndash;&gt; 取到字符串中的某一个字符  索引 应该是一个随机的 随机数的范围应该是大于0 小于字符串长度
+    var newStr='';
+    for (var i=0;i<4;i++){
+        var eg=Math.round(Math.random()*(str.length-1));
+        var val=str.charAt(eg);
+        if (newStr.indexOf(val)===-1){
+            newStr+=val;
+        }else {
+            i&#45;&#45;;
+        }
+    }
+    document.body.innerText=newStr;
+    /*var eg=Math.round(Math.random()*(str.length-1));
+    var val=str.charAt(eg);*/
+
+</script>-->
+<!--<script>
+    // 有一个装着很多字符的盒子  验证码的取值范围
+    var str='abcdefg1234567890一二三四五六七八九十';
+    // 取到某一个字符  charAt(索引)&ndash;&gt;该索引值对应的字符
+    //str.charAt(str.length-1) 取到字符串中最后一个字符
+    // 传入的索引值应该是一个随机的
+    var val='';//每一次for循环得到的val值累加到这变量中
+    for (var i=0;val.length<4;i++){
+        var eg=Math.round(Math.random()*(str.length-1));//取到的是随机的索引
+        var newVal=str.charAt(eg);//查找索引对应的字符 将字符添加到val这个变量中
+        if (val.indexOf(newVal)===-1){
+            val+=newVal;
+        }
+    }
+    document.body.innerText=val;
+    //var eg=Math.round(Math.random()*(str.length-1));//取到的是随机的索引
+    //var val=str.charAt(eg);
+
+
+
+</script>-->
+</body>
+</html>

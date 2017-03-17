@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM的增删改查</title>
+</head>
+<body>
+<div id="box">
+    <p id="p1">pppppp</p>
+    <!--111111111-->
+</div>
+<script>
+    var obj=document.querySelector('script');
+    obj.parentNode.removeChild(obj);
+    //var oDiv=document.createElement('div');
+    //box.replaceChild(oDiv,p1);
+    /*box.insertBefore(oDiv,p1);
+    var newBox=box.cloneNode(true);
+
+    document.body.appendChild(newBox);*/
+    //oDiv.parentNode.removeChild(oDiv);
+    //p1.parentNode.removeChild(p1);
+    //oDiv.setAttribute('zhufeng','peixun');//显示在标签内
+    /*console.log(oDiv.getAttribute('zhufeng'));
+    oDiv.removeAttribute('zhufeng');
+    oDiv.setAttribute('id','tab');*/
+    // oDiv.index=1;// 在标签中看不到
+    // document.write(oDiv);
+    // document.body.innerHTML=oDiv;
+    // document.body.appendChild(oDiv);
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>99</title>
+    <style>
+        span {
+            margin: 0 20px;
+        }
+        .bg1{
+            background-color: red;
+        }
+        .bg2{
+            background-color: #2b7dd1;
+        }
+        .bg3{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<!--var num=1;
+num+=9;//num=1+9=10
+console.log(num);-->
+
+<script>
+    var str='';
+    for (var i=1;i<=9;i++){
+        str+='<p class="bg'+(i%2+1)+'">';
+        // 当i=1的时候 p标签中需要一对span
+        // 当i=2的时候 p标签中需要两对span
+        // 当i=3的时候 p标签中需要三对span
+        //当i=1 生成一对p标签  j<=1 里面的循环只执行一次 生成一对span i=2
+        //当i=2 生成一对p标签  j<=2 里面的循环只执行2次 生成两对span i=3
+        //当i=9 生成一对p标签  j<=9 里面的循环只执行9次 生成9对span i=10
+        for (var j=1;j<=i;j++){
+            str+='<span>';
+            str+=j+'*'+i+'='+(i*j);
+            str+='</span>';
+        }
+        str+='</p>';
+    }
+    document.write(str);
+
+    var oPs=document.querySelectorAll('p');
+    for (var i=0;i<oPs.length;i++){
+        oPs[i].onmouseover=function () {
+            this.oldBg=this.className;
+            this.className='bg3';
+        }
+        oPs[i].onmouseout=function () {
+            this.className=this.oldBg;
+        }
+
+        oPs[i].index=i+1;
+        oPs[i].onclick=function () {
+            alert('我是第'+this.index+'行')
+        }
+    }
+    /*for (var i=0;i<oPs.length;i++){
+        if(i%2===0){
+            oPs[i].className='bg1';
+            oPs[i].odlBg='bg1';
+        }else {
+            oPs[i].className='bg2';
+            oPs[i].odlBg='bg2';
+        }
+        oPs[i].onmouseover=function () {
+            this.className='bg3';
+        }
+        oPs[i].onmouseout=function () {
+            this.className=this.odlBg;
+        }
+        oPs[i].index=i+1;
+        oPs[i].onclick=function () {
+            alert('我是第'+this.index+'行')
+        }
+    }*/
+    /*str+='<p></p>';// str=''+'<p></p>' = '<p></p>'
+    str+='<div></div>';//str = '<p></p>'+'<div></div>' ='<p></p><div></div>'
+    console.log(str);*/
+    /*str+=1; // str=''+1 = '1'
+    console.log(str);*/
+</script>
+<!--<script>
+    var str = '';
+    for (var i = 1; i <= 9; i++) {
+        str += '<p>';
+        for (var j = 1; j <= i; j++) {
+            str += '<span>';
+            str += j + '*' + i + '=' + (i * j);
+            str += '</span>';
+        }
+        str += '</p>';
+    }
+    document.write(str);
+
+
+</script>-->
+<!--<p>
+    <span>1*1=1</span>
+</p>
+<p>
+    <span>1*2=2</span>
+    <span>2*2=4</span>
+</p>
+<p>
+    <span>1*3=3</span>
+    <span>2*3=6</span>
+    <span>3*3=9</span>
+</p>-->
+</body>
+</html>
+<!--<script>-->
+<!--// 1 如何向body（任意元素中添加html元素和内容）-->
+<!--//document.write('<p></p>');-->
+<!--//xxx.innerHTML='<p></p>';-->
+<!--/*for (var i=1;i<10;i++){-->
+<!--//document.write('<p>'+i+'</p>');-->
+<!--document.write('<p>');-->
+<!--for (var j=1;j<=i;j++){-->
+<!--document.write('<span>');-->
+<!--document.write(j+'*'+i+'='+(j*i));-->
+<!--document.write('</span>');-->
+<!--}-->
+<!--document.write('</p>');-->
+<!--}*/-->
+
+<!--var str='';// 先进行字符串拼接，然后将字符串统一放在这个变量中，最终直接将这个变量里面所有的内容输出到body最终即可-->
+<!--for (var i=1;i<=9;i++){-->
+<!--//j是列 i是行 j和i是变量 其他的是字符串-->
+<!--//str &ndash;&gt; '<p>111</p>'-->
+<!--str+='<p>';-->
+<!--for (var j=1;j<=i;j++){-->
+<!--str+='<span>';-->
+<!--str+=j+'*'+i+'='+(j*i);-->
+<!--str+='</span>';-->
+<!--//str+='<span>'+j+'*'+i+'='+(j*i)+'</span>';-->
+<!--}-->
+<!--str+='</p>';-->
+<!--}-->
+<!--document.write(str);-->
+
+<!--/*str+='<p>';-->
+<!--str+='<span></span>';-->
+<!--str+='</p>';-->
+
+<!--str+='<p>';-->
+<!--str+='<span></span>';-->
+<!--str+='<span></span>';-->
+<!--str+='</p>';-->
+
+<!--str+='<p>';-->
+<!--str+='<span></span>';-->
+<!--str+='<span></span>';-->
+<!--str+='<span></span>';-->
+<!--str+='</p>';*/-->
+<!--</script>-->

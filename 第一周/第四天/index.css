@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+img{
+    border: none;/*ie低版本浏览器图片周围可能会出现1px的边框*/
+    vertical-align: top;
+}
+body{/*文字设置的相关属性都是可继承属性*/
+    font: 12px/1.5 "Microsoft YaHei";
+    /*font-size: 12px;
+    line-height: 1.5em;
+    font-family: "Microsoft YaHei";*/
+}
+.clearfix{*zoom:1;}
+.clearfix:after{/*清除浮动*/
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.main{
+    margin: 0 auto;
+    width: 1199px;
+    background-color: aquamarine;
+}
+ul{
+    margin-left: -65px;
+}
+li{
+    float: left;
+    margin-left: 65px;
+    width: 251px;
+    height: 184px;
+    background-color: white;
+}
+.top{
+    position: relative;
+    overflow: hidden;
+    height: 141px;
+}
+.title{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    padding: 16px 15px 0;
+    height: 90px;
+    background-image: url("bg.png");
+    cursor:pointer;/*光标变小手*/
+    transition: bottom 0.3s;/*过渡*/
+}
+.title:hover{
+    bottom: 0;
+    /*transition: bottom 0.3s;!*过渡*!*/
+}
+h2{
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 14px;
+    color: #1e1e1e;
+}
+p{
+    margin-top: 8px;
+    line-height: 14px;
+    color: #9e9d9d;
+}
+.bom{
+    padding: 0 13px 0 16px;
+    line-height: 43px;
+}
+.left{
+    color: #c71b1b;
+}
+.right{
+    float: right;
+    color: #868484;
+}
+/*.last{margin-right: 0}*/

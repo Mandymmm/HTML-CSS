@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul{list-style: none;background-color: yellow}
+        li{
+            float: left;
+            border: 3px solid red;
+            width: 100px;
+            height: 100px;
+        }
+        ul:after{/*向ul所有内容之后添加一个after的伪元素*/
+            display: block;
+            content: "";
+            clear: both;
+        }
+        .clearfix:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<ul class="clearfix">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <!--<div style="clear: both;"></div>-->
+    <!--<after></after>-->
+</ul>
+</body>
+</html>

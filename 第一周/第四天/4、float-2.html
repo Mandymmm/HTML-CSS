@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            /*overflow: hidden;*/
+            /*display: table;*/
+            list-style: none;/*列表样式*/
+            background-color: red;
+            /*height: 102px;*/
+        }
+        li{
+            /*display: table-cell;*/
+            /*display: inline-block;*/
+            float: left;
+            border: 1px solid yellow;
+            width: 100px;
+            height: 100px;
+        }
+        ul:after,div:after,dl:after{
+            display: block;
+            content: "";/*给伪元素添加内容*/
+            clear: both;
+        }
+        .clearfix:after{}
+        ul{
+            *zoom:1;
+            /*当前版本上升*/
+            /*
+            *属性名 的方式是 css属性名hack
+            “*” 是用来兼容ie7版本浏览器
+            */
+        }
+    </style>
+</head>
+<body>
+<ul class="clearfix">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <!--<li style="clear: both;float: none;opacity: 0;height: 0;width: 0;border: none;"></li>-->
+    <!--after-->
+</ul>
+<div class="clearfix" style="height:200px;background-color: greenyellow;">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+<dl class="clearfix">
+    <dt>
+
+    </dt>
+    <dd></dd>
+</dl>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>text-shadow</title>
+    <style type="text/css">
+    .box1 p{
+        text-shadow:2px 2px rgba(0,0,0,1);
+    }
+    .box2 p{
+        text-shadow:2px 2px 2px rgba(0,0,0,1);
+    }
+    .box3 p{
+            text-shadow:2px 2px rgba(0,0,0,.5),2px 2px 2px rgba(0,85,0,1);
+        }
+        .box4{
+            width:400px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+            font-weight:bold;
+            border:1px solid #3a96ec;
+            font-size:30px;
+            text-shadow: 0 0 0 rgb(188, 178, 188),
+            1px -1px 0 rgb(173, 163, 173),
+            2px -2px 0 rgb(157, 147, 157),
+            3px -3px 0 rgb(142, 132, 142),
+            4px -4px 0 rgb(126, 116, 126),
+            5px -5px 0 rgb(111, 101, 111),
+            6px -6px 0 rgb(95, 85, 95),
+            7px -7px 0 rgb(79, 69, 79),
+            8px -8px 7px rgba(0, 0, 0, 0.35),
+            8px -8px 1px rgba(0, 0, 0, 0.5),
+            0 0 7px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <h4>1.普通文字阴影(不带模糊效果)</h4>
+    <p>普通文字效果</p>
+</div>
+<div class="box2">
+    <h4>2.普通文字阴影(带模糊效果)</h4>
+    <p>带模糊效果文字效果</p>
+</div>
+<div class="box3">
+    <h4>3.多重文字阴影(带模糊效果)</h4>
+    <p>带模糊效果多重文字效果</p>
+</div>
+<div class="box4">珠峰培训</div>
+</body>
+</html>

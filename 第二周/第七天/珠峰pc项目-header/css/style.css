@@ -1,0 +1,157 @@
+body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,form,table{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+img,a{
+    border: none;
+}
+img{
+    vertical-align: top;
+}
+a{
+    text-decoration: none;
+    color: #1e1e1e;
+}
+body{
+    font: 12px/1.5 "Microsoft YaHei";
+    color: #1e1e1e;
+}
+.clearfix{*zoom:1;}
+.clearfix:after{
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.main{
+    margin: 0 auto;
+    width: 1204px;
+}
+.header{
+    height: 84px;
+}
+.header .logo{
+    float: left;
+    margin-right: 50px;
+    width: 180px;
+    height: 84px;
+}
+.header .nav{
+    float: left;
+    line-height: 84px;
+}
+.header .nav a{
+    margin: 0 30px;
+    font-size: 14px;
+    color: #2a2a2a;
+}
+.header .nav a:hover{
+    color: #2b7dd1;
+}
+.header .login{
+    float: right;
+    line-height: 84px;
+    font-size: 14px;
+}
+.header .car{
+    position: relative;
+    float: left;
+}
+.header .login a{
+    margin-right: 35px;
+    color:#666676;
+}
+.header .login a:hover{
+    color: #2b7dd1;
+}
+.header .car .icon,.car-icon{
+    background: url("../img/bg.png") no-repeat;
+}
+.header .car .icon{
+    display: inline-block;
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+.header .login a:hover .icon{
+    background-position: 0 -24px;
+}
+.car-list{
+    display: none;
+    position: absolute;
+    left: -150px;
+    top: 65px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 1px 1px 10px rgba(2,2,2,0.34);
+    padding: 0 13px;
+    width: 324px;
+}
+.car-list .title{
+    border-bottom: 1px solid #e1e1e1;
+    height: 52px;
+    line-height: 52px;
+
+}
+.car-list .title h4{
+    float: left;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333;
+}
+.car-list .title p{
+    float: right;
+    color: #7d7d7d;
+}
+.car-icon{
+    margin: 59px auto 20px;
+    border-radius: 50%;
+    width: 66px;
+    height: 66px;
+    background-position: 14px -47px;
+    background-color: #9e9e9e;
+}
+.shopping-cart{
+    line-height: 24px;
+    font-size: 14px;
+    color: #414141;
+    text-align: center;
+}
+.car-list hr{
+    margin: 17px auto 30px;
+    width: 189px;
+    background-color: #e1e1e1;
+}
+.buy-like{
+    color: #4e91d7;
+    line-height: 14px;
+    text-align: center;
+}
+.car-list .bom{
+    margin-top: 55px;
+    border-top: 1px solid #e1e1e1;
+    line-height: 68px;
+}
+.car-list .bom p{
+    float: left;
+    color: #7d7d7d;
+}
+.car-list .bom a{
+    margin-top: 15px;
+    float: right;
+    border-radius: 5px;
+    width: 79px;
+    height: 39px;
+    line-height: 39px;
+    background-color: #4e91d7;
+    color: #fff;
+    text-align: center;
+}
+.car:hover .car-list{
+    display: block;
+}

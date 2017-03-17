@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        .main{
+            width:300px;
+            height:600px;
+            background:#0fb200;
+            display:flex;
+            display: -webkit-flex;
+
+            /*新浪:(4个兼容写法)*/
+            /*display: -webkit-box;   */
+            /*display: -webkit-flex;*/
+            /*display: -ms-flexbox;   */
+            /*display: flex;*/
+
+
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            position: relative;
+
+            -webkit-box-orient: vertical;
+            /*表示子元素在父元素里面的排列方向  */
+            -webkit-box-pack: justify;
+            /*表示子元素的对齐方式 */
+            display: -webkit-box
+
+
+
+
+
+
+
+
+
+
+            /*flex-direction: column-reverse;*/
+            /*-webkit-flex-direction: column-reverse;*/
+
+            /*flex-wrap: wrap;*/
+            /*-webkit-flex-wrap: wrap;*/
+
+            /*flex-flow: wrap row;*/
+            /*-webkit-flex-flow: wrap row;*/
+
+            /*justify-content: flex-start;*/
+            /*justify-content: center;*/
+
+            /*text-align:center 水平居中效果*/
+
+
+
+            /*line-height: 30px;(行高) 垂直居中*/
+
+            /*align-items: center;*/
+            /*-webkit-align-items:center;*/
+
+            align-content: flex-start;
+            -webkit-align-content: flex-start;
+
+        }
+
+        .box{
+            width:200px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+            /*margin-right:10px;*/
+            font-size:30px;
+            color:#000;
+        }
+        .box1{
+            background:#0000cc;
+        }
+        .box2{
+            background:#ffff00;
+        }
+        .box3{
+            background:#007aff;
+
+        }
+        .box4{
+            background:red;
+        }
+        .box5{
+            background:#0BC7B4;
+        }
+        .box6{
+            background:green;
+        }
+
+    </style>
+</head>
+<body>
+<!--DIV+CSS  盒子模型-->
+<!--flex  弹性盒模型-->
+<div class="main">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+    <div class="box box5">5</div>
+    <div class="box box6">6</div>
+</div>
+</body>
+</html>

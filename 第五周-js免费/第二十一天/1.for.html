@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for</title>
+</head>
+<body>
+<button>第一个</button>
+<button>第二个</button>
+<button>第三个</button>
+<script>
+    //应用场景
+    //需求 ： 点击第一个按钮，弹出“我是第1个按钮”
+    //需求 ： 点击第二个按钮，弹出“我是第2个按钮”
+    //需求 ： 点击第三个按钮，弹出“我是第3个按钮”
+
+    //先定义方法：
+    /*function btn(n) {//形参也是一个变量
+        alert('我是第'+(n+1)+'个按钮')
+    }
+    var oBtns=document.querySelectorAll('button');
+    //console.log(oBtns);
+    for (var i=0;i<oBtns.length;i++){
+        oBtns[i].index=i;
+        oBtns[i].onclick=function () {
+            btn(this.index);
+        };
+    };*/
+
+    var oBtns=document.querySelectorAll('button');
+    for (var i=0;i<oBtns.length;i++){
+        oBtns[i].index=i+1;
+        oBtns[i].onclick=function () {
+            alert(this.index);
+        }
+    }
+
+
+
+
+
+
+
+    /*oBtns[0].onclick=function () {
+        btn(this.index);
+    };
+    oBtns[1].onclick=function () {
+        btn(1);
+    };
+    oBtns[2].onclick=function () {
+        btn(2);
+    };*/
+
+
+
+    /*for(var i=0;i<100;i++){
+        document.write(i+'<br />');//执行100次
+    }*/
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

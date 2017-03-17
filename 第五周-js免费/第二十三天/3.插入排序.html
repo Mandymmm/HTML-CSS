@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入排序</title>
+</head>
+<body>
+<script>
+    var ary=[2,1,4,6,5,7,0];
+    var newAry=[];// 创建一个新的数组
+    newAry.push(ary[0]);
+    for (var i=1;i<ary.length;i++){
+        for (var j=0;j<newAry.length;j++){
+            if (ary[i]<newAry[j]){
+                newAry.splice(j,0,ary[i]);
+                break;
+            }else {
+                if (j===newAry.length-1){
+                    // j值和新数组在最后一项的索引值相等，说明老数组的这一项比新数组的所有项都大，直接添加到新数组末尾
+                    newAry.push(ary[i]);
+                    break;
+                }
+            }
+        }
+    }
+    console.log(newAry);
+
+
+
+
+
+
+
+
+
+
+
+
+    //ary[1]  newAry[?]
+    /*if (ary[i]>newAry[j]){
+
+    }else { <=
+
+    }*/
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

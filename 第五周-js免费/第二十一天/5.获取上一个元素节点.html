@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取上一个元素节点</title>
+</head>
+<body>
+<div>
+    <p></p>
+    <a href=""></a>
+    <!--注释1-->
+    <!--注释2-->
+    <p id="last"></p>
+</div>
+<script>
+    var op = document.querySelector("#last");
+    var temp = op.previousSibling;// 当前元素对象上一个节点
+    // 判断temp中取到的节点是否为元素节点，如果是 返回值 停止查找 ， 如果不是继续向上查找
+    while (temp.nodeType!==1){
+        temp = temp.previousSibling;
+        // 如果取到的节点类型不是1 就继续在新取到的对象上继续向上查找
+    }
+    console.log(temp);
+
+
+
+
+
+    /*while((op = op.previousSibling).nodeType !==1){
+
+    }
+    console.dir(op);*/
+
+
+
+
+
+    // 获取已知元素对象
+    // var last=document.getElementById('last');
+    // 获取上一个节点
+    // var pre=last.previousSibling;
+    // 判断pre的nodeType===1，如果不是1，继续向上查找
+    // 如果要查找的次数为未知数 还能用for i<未知
+    /*for (var i=0;i==i;){
+        if (pre.nodeType===1){
+            console.log(pre.nodeName);
+            break;
+        }else {
+            pre=pre.previousSibling;
+        }
+    }*/
+    /*while (条件){
+        // 条件成立的时候 会一直执行代码
+        // 条件不成立 马上停止这个循环
+    }*/
+</script>
+</body>
+</html>

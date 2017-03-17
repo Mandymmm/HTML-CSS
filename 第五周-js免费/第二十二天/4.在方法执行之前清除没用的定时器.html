@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除定时器</title>
+    <style>
+        div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<button>点击开始</button>
+<button>点击结束</button>
+<div></div>
+<script>
+    var oBtns=document.getElementsByTagName('button');
+    var oDiv=document.getElementsByTagName('div');
+    // 定义一个方法 这个方法执行的时候 就可以将div的left值进行累加
+    var num=0;//1 2 3 .... //'8px'
+    var temp=null;// 用来接收之后赋的值
+    function move() {
+        /*num++; //'8px+1' --> '8px1'
+        oDiv[0].style.left='8px1'+'px';*/
+        num=parseInt(num);
+        num++;
+        oDiv[0].style.left=num+'px';
+    }
+    oBtns[0].onclick=function () {
+        clearTimeout(temp);
+        temp=window.setInterval(move,10);
+    };
+    oBtns[1].onclick=function () {
+        clearTimeout(temp);
+        oDiv[0].style.left=num='8px';
+    }
+</script>
+<!--<script>
+    var oBtns=document.getElementsByTagName('button');//[button,button]
+    var oDiv=document.getElementsByTagName('div');//[div]
+    var leftNum=0;// 2 0的基础上进行加1
+    var tem=null;// 1  在函数外定义一个全局变量 接收定时器的返回值
+    function move() {
+        leftNum++;// 为什么不能在此处直接进行‘px’拼接
+        //1+++‘px’&ndash;&gt; ‘1px’+1&ndash;&gt; ‘1px1’
+        oDiv[0].style.left=leftNum+'px';//2
+    }
+    oBtns[0].onclick=function () {
+        clearTimeout(tem);
+        tem=window.setInterval(move,10)
+    };
+    oBtns[1].onclick=function () {
+        clearTimeout(tem);
+    }
+</script>-->
+</body>
+</html>

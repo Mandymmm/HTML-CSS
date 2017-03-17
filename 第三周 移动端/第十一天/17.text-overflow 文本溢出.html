@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>text-overflow 文本溢出</title>
+    <style type="text/css">
+        /*1.将text-overflow生效必备的3个属性：overflow、width、white-space都直接定义在了内联容器的父级块容器上*/
+        .ellipsis1 p {
+            width: 200px;
+            white-space: nowrap;
+            /*text-overflow:clip;*/
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        /*2.将width和white-space定义在了更外层的块容器上,和上面的效果一样,因为这2个属性是可以被继承的*/
+        .ellipsis2{
+            width: 200px;
+            white-space: nowrap;
+        }
+        .ellipsis2 p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .clip p{
+            width: 200px;
+            white-space: nowrap;
+            text-overflow: clip;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="ellipsis1">
+    <h4>1.ellipsis: 将溢出的文字显示省略标记（...）</h4>
+    <p>随便输点文字文字文字文字文字文字文字文字文字文字文字</p>
+</div>
+<div class="ellipsis2">
+    <h4>2.ellipsis: 将溢出的文字显示省略标记（...）</h4>
+    <p>随便输点文字文字文随便输点字文字文字文字文字文字文字文字文字随便输点</p>
+</div>
+<div class="clip">
+    <h4>3.clip: 直接将溢出的文字裁剪</h4>
+    <p>随便输点文字文字文字文字文字文字文字文字文字文字文字</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html><html><head><title>第二天笔记</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style>
+.note-content  {font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif;}
+
+</style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="第二天笔记">第二天笔记</h1>
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><a href="#第二天笔记">第二天笔记</a><ul>
+<li><a href="#基本数据类型和引用数据类型的区别">基本数据类型和引用数据类型的区别</a></li>
+<li><a href="#字符串拼接">字符串拼接</a></li>
+<li><a href="#js中数据类型的检测">js中数据类型的检测</a><ul>
+<li><a href="#typeof-value">typeof value</a></li>
+<li><a href="#instanceof">instanceof</a></li>
+<li><a href="#constructor">constructor</a></li>
+<li><a href="#objectprototypetostringcall">Object.prototype.toString.call()</a></li>
+</ul>
+</li>
+<li><a href="#数据类型之间的比较">数据类型之间的比较</a></li>
+<li><a href="#判断语句">判断语句</a><ul>
+<li><a href="#if-else">if else</a></li>
+<li><a href="#switch">switch</a></li>
+<li><a href="#三元运算符-条件运算符三目运算符">三元运算符 （条件运算符/三目运算符）</a></li>
+</ul>
+</li>
+<li><a href="#循环">循环</a><ul>
+<li><a href="#for循环">for循环</a><ul>
+<li><a href="#break出现在循环体中break后面的代码不再执行整个循环结束">break出现在循环体中，break后面的代码不再执行，整个循环结束</a></li>
+<li><a href="#continue出现正在循环体中循环体continue后面的代码不执行但是循环依然正常">continue出现正在循环体中，循环体continue后面的代码不执行，但是循环依然正常</a></li>
+</ul>
+</li>
+<li><a href="#for-in循环">for in循环</a></li>
+</ul>
+</li>
+<li><a href="#复习">复习</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<h2 id="基本数据类型和引用数据类型的区别">基本数据类型和引用数据类型的区别</h2>
+
+<p>基本数据类型直接对值进行操作 <br>
+引用数据类型操作的是内存地址</p>
+
+<blockquote>
+  <p>1、浏览器提供给代码运行的环境，代码在这里从上到下执行 <br>
+      2、当遇到引用数据类型的时候，浏览器会开辟一个新的内存空间，将引用数据类型中的代码当做字符串存到这个里面 <br>
+      3、开辟的空间会返回给对象一个地址，那么此时这个对象储存的不是代码而是一个地址 <br>
+      4、当将这个对象赋值给另一个对象的时候，其实赋值过程是将地址传递给另一个对象了 <br>
+      也就是说，这两个对象将要访问同一个地址，也就是说他们操作的是同一份代码</p>
+</blockquote>
+
+
+
+<h2 id="字符串拼接">字符串拼接</h2>
+
+<p>在js中其他数据类型+=一个字符串的话，全部会变成字符串</p>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs javascript"><span class="hljs-comment line-number">1.</span>    <span class="hljs-keyword">var</span> str1=<span class="hljs-string">''</span>;<br><span class="hljs-comment line-number">2.</span>    str1+=<span class="hljs-literal">true</span>;<br><span class="hljs-comment line-number">3.</span>    <span class="hljs-built_in">console</span>.log(str1);<span class="hljs-comment">//'true'</span><br></code></pre>
+
+
+
+<h2 id="js中数据类型的检测">js中数据类型的检测</h2>
+
+
+
+<h3 id="typeof-value">typeof value</h3>
+
+<p>返回值永远是一个<strong>字符串</strong>里面包着数据类型</p>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs livescript"><span class="hljs-comment line-number">1.</span><span class="hljs-keyword">typeof</span> <span class="hljs-literal">undefined</span><span class="hljs-function"> --&gt;</span> <span class="hljs-string">'undefined'</span><br><span class="hljs-comment line-number">2.</span><span class="hljs-keyword">typeof</span> <span class="hljs-number">1</span><span class="hljs-function"> --&gt;</span> <span class="hljs-string">'number'</span><br><span class="hljs-comment line-number">3.</span><span class="hljs-keyword">typeof</span> <span class="hljs-string">''</span><span class="hljs-function"> --&gt;</span> <span class="hljs-string">'string'</span><br><span class="hljs-comment line-number">4.</span><span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span><span class="hljs-function"> --&gt;</span> <span class="hljs-string">'boolean'</span><br><span class="hljs-comment line-number">5.</span><span class="hljs-keyword">typeof</span> []<span class="hljs-function">--&gt;</span> <span class="hljs-string">'object'</span><br><span class="hljs-comment line-number">6.</span><span class="hljs-keyword">typeof</span> {}<span class="hljs-function"> --&gt;</span> <span class="hljs-string">'object'</span><br><span class="hljs-comment line-number">7.</span><span class="hljs-keyword">typeof</span> <span class="hljs-literal">null</span>-<span class="hljs-function">-&gt;</span> <span class="hljs-string">'object'</span><br><span class="hljs-comment line-number">8.</span><span class="hljs-keyword">typeof</span> <span class="hljs-keyword">function</span> (){}<span class="hljs-function">--&gt;</span> <span class="hljs-string">'function'</span><br><span class="hljs-comment line-number">9.</span><span class="hljs-keyword">typeof</span> 不能具体细分object下面的数据类型<br><span class="hljs-comment line-number">10.</span><span class="hljs-keyword">typeof</span> 人为<span class="hljs-literal">null</span>也是object下的数据类型<br><span class="hljs-comment line-number">11.</span><br><span class="hljs-comment line-number">12.</span><span class="hljs-comment">/*typeof (typeof (typeof (typeof (typeof undefined))))<br><span class="hljs-comment line-number">13.</span>    'string'*/</span><br></code></pre>
+
+
+
+<h3 id="instanceof">instanceof</h3>
+
+<p>运算返回值是布尔类型的值 <br>
+判断已知对象数据类型的方法 <br>
+（判断一个实例是否属于这个类–&gt;例如：[] 是不是属于数组类） <br>
+instanceof 在检测的时候 基本数据类型不能检测</p>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs fortran"><span class="hljs-comment line-number">1.</span><span class="hljs-keyword">value</span> instanceof <span class="hljs-keyword">Class</span><br></code></pre>
+
+
+
+<h3 id="constructor">constructor</h3>
+
+<p>运算返回值是布尔类型的值</p>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs cpp"><span class="hljs-comment line-number">1.</span>[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].constructor === Array<br></code></pre>
+
+<p>=== 绝对比较  左右两侧的数据类型完全一致</p>
+
+<h3 id="objectprototypetostringcall">Object.prototype.toString.call()</h3>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs autoit"><span class="hljs-comment line-number">1.</span>(Object.prototype.toString.<span class="hljs-built_in">call</span>(<span class="hljs-string">'珠峰培训'</span>) === <span class="hljs-string">'[object String]'</span>)---&gt; <span class="hljs-literal">true</span><br></code></pre>
+
+
+
+<h2 id="数据类型之间的比较">数据类型之间的比较</h2>
+
+<ul><li>对象==对象 永远为false <br>
+<ul>
+<li>({}=={})     []==[]   {}==[]</li></ul></li>
+<li>数字==字符串 字符串调用Number()方法，将字符串转为数字，然后再进行比较</li>
+</ul>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs stylus"><span class="hljs-comment line-number">1.</span><span class="hljs-number">1</span>==<span class="hljs-string">'1'</span><br><span class="hljs-comment line-number">2.</span><span class="hljs-number">1</span>==<span class="hljs-function"><span class="hljs-title">Number</span><span class="hljs-params">(<span class="hljs-string">'1'</span>)</span></span><br></code></pre>
+
+<ul><li>数字==布尔 布尔转为数字数据类型，调用Number() <br>
+true = 1  false = 0</li>
+</ul>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs cpp"><span class="hljs-comment line-number">1.</span><span class="hljs-number">1</span>==<span class="hljs-literal">false</span><br><span class="hljs-comment line-number">2.</span><span class="hljs-number">1</span>==Number(<span class="hljs-literal">false</span>)<br><span class="hljs-comment line-number">3.</span><span class="hljs-number">1</span>==<span class="hljs-number">0</span><br></code></pre>
+
+<ul><li>数字==对象  对象调用.toString()变成字符串，字符串调用Number()方法变成数字</li>
+</ul>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs livescript"><span class="hljs-comment line-number">1.</span><span class="hljs-number">1</span>==[]<br><span class="hljs-comment line-number">2.</span><span class="hljs-number">1</span>==[].toString<span class="hljs-function"><span class="hljs-params">()</span> --&gt;</span> <span class="hljs-number">1</span>==<span class="hljs-string">''</span><span class="hljs-function"> --&gt;</span> <span class="hljs-number">1</span>==Number<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">''</span>)</span>--&gt;</span> <span class="hljs-number">1</span>==<span class="hljs-number">0</span><span class="hljs-function"> --&gt;</span> <span class="hljs-literal">false</span><br><span class="hljs-comment line-number">3.</span><br><span class="hljs-comment line-number">4.</span><span class="hljs-number">1</span>==[<span class="hljs-number">1</span>]<br><span class="hljs-comment line-number">5.</span><span class="hljs-number">1</span>==[<span class="hljs-number">1</span>].toString<span class="hljs-function"><span class="hljs-params">()</span> --&gt;</span> <span class="hljs-number">1</span>==<span class="hljs-string">'1'</span><span class="hljs-function"> --&gt;</span> <span class="hljs-number">1</span>==Number<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'1'</span>)</span>--&gt;</span> <span class="hljs-number">1</span>==<span class="hljs-number">1</span><span class="hljs-function"> --&gt;</span> <span class="hljs-literal">true</span><br><span class="hljs-comment line-number">6.</span><br><span class="hljs-comment line-number">7.</span><span class="hljs-number">1</span>=={}<br><span class="hljs-comment line-number">8.</span><span class="hljs-number">1</span>=={}.toString<span class="hljs-function"><span class="hljs-params">()</span> --&gt;</span> <span class="hljs-number">1</span>==<span class="hljs-string">"[object Object]"</span><span class="hljs-function"> --&gt;</span> <span class="hljs-number">1</span>==Number<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">"[object Object]"</span>)</span>--&gt;</span> <span class="hljs-number">1</span>==NaN<span class="hljs-function"> --&gt;</span> <span class="hljs-literal">false</span><br><span class="hljs-comment line-number">9.</span><br><span class="hljs-comment line-number">10.</span>{}.toString<span class="hljs-function"><span class="hljs-params">()</span> --&gt;</span> <span class="hljs-string">"[object Object]"</span><br></code></pre>
+
+<ul><li>对象==字符串  对象调用.toString()变成字符串</li>
+</ul>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs livescript"><span class="hljs-comment line-number">1.</span><span class="hljs-string">''</span>==[]<br><span class="hljs-comment line-number">2.</span><span class="hljs-string">''</span>==[].toString<span class="hljs-function"><span class="hljs-params">()</span>--&gt;</span><span class="hljs-string">''</span>==<span class="hljs-string">''</span><span class="hljs-function"> --&gt;</span><span class="hljs-literal">true</span><br><span class="hljs-comment line-number">3.</span><br><span class="hljs-comment line-number">4.</span><span class="hljs-string">''</span>=={}<br><span class="hljs-comment line-number">5.</span><span class="hljs-string">''</span>==<span class="hljs-string">'[object Object]'</span><span class="hljs-function"> --&gt;</span> <span class="hljs-literal">false</span><br></code></pre>
+
+<ul><li>字符串==布尔  双方都变成数字数据类型</li>
+</ul>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs cpp"><span class="hljs-comment line-number">1.</span><span class="hljs-number">12</span>==<span class="hljs-literal">true</span>  -- &gt; <span class="hljs-literal">false</span><br></code></pre>
+
+<ul><li><p>对象==布尔 双方转化为数字</p></li>
+<li><p>null==undefined    true </p></li>
+<li>null===undefined   false  ===要求等号两侧的数据类型一致</li>
+<li>NaN==NaN false</li>
+</ul>
+
+<blockquote>
+  <p>对象和其他数据类型比较的时候，最先都要转为字符串 <br>
+  最终比较的时候，其实都是数字数据类型在比较</p>
+</blockquote>
+
+<h2 id="判断语句">判断语句</h2>
+
+
+
+<h3 id="if-else">if else</h3>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs cpp"><span class="hljs-comment line-number">1.</span>(条件) --&gt; <span class="hljs-literal">true</span>/<span class="hljs-literal">false</span><br><span class="hljs-comment line-number">2.</span><br><span class="hljs-comment line-number">3.</span><span class="hljs-number">1</span> <span class="hljs-keyword">if</span>(条件){条件成立执行的代码}<br><span class="hljs-comment line-number">4.</span><br><span class="hljs-comment line-number">5.</span><span class="hljs-number">2</span> <span class="hljs-keyword">if</span>(条件){条件成立执行的代码}<span class="hljs-keyword">else</span>{条件不成立执行的代码}<br><span class="hljs-comment line-number">6.</span><br><span class="hljs-comment line-number">7.</span><span class="hljs-number">3</span> <span class="hljs-keyword">if</span>(条件<span class="hljs-number">1</span>){<br><span class="hljs-comment line-number">8.</span>    条件<span class="hljs-number">1</span>成立执行的代码<br><span class="hljs-comment line-number">9.</span>}<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(条件<span class="hljs-number">2</span>){<br><span class="hljs-comment line-number">10.</span>    条件<span class="hljs-number">2</span>成立执行的代码<br><span class="hljs-comment line-number">11.</span>}<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(条件<span class="hljs-number">3</span>){<br><span class="hljs-comment line-number">12.</span>    条件<span class="hljs-number">3</span>成立执行的代码<br><span class="hljs-comment line-number">13.</span>}....<span class="hljs-keyword">else</span>{<br><span class="hljs-comment line-number">14.</span>    以上条件都不成立执行的代码<br><span class="hljs-comment line-number">15.</span>}<br></code></pre>
+
+
+
+<h3 id="switch">switch</h3>
+
+<p>是绝对比较（条件和值进行比较的时候必须是相同数据类型），用在不同值的不同操作上面 <br>
+ps：如果成立的条件后面没有break，那么这个判断会从成立的那个条件开始，一直执行到最后</p>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs actionscript"><span class="hljs-comment line-number">1.</span><span class="hljs-keyword">var</span> n=<span class="hljs-number">1</span>;<br><span class="hljs-comment line-number">2.</span>     <span class="hljs-keyword">switch</span> (n){<br><span class="hljs-comment line-number">3.</span>         <span class="hljs-keyword">case</span> <span class="hljs-string">'0'</span>:<br><span class="hljs-comment line-number">4.</span>             alert(<span class="hljs-string">'0'</span>);<br><span class="hljs-comment line-number">5.</span>             <span class="hljs-keyword">break</span>;<span class="hljs-comment">//如果break跟着的这个条件成立，就跳出（中断）判断，不会继续执行判断了</span><br><span class="hljs-comment line-number">6.</span>         <span class="hljs-keyword">case</span> <span class="hljs-string">'1'</span>:<br><span class="hljs-comment line-number">7.</span>             alert(<span class="hljs-string">'1'</span>);<br><span class="hljs-comment line-number">8.</span>             <span class="hljs-keyword">break</span>;<br><span class="hljs-comment line-number">9.</span>         <span class="hljs-keyword">default</span>:<br><span class="hljs-comment line-number">10.</span>             alert(<span class="hljs-string">'以上都不成立'</span>);<br><span class="hljs-comment line-number">11.</span>     }<br></code></pre>
+
+
+
+<h3 id="三元运算符-条件运算符三目运算符">三元运算符 （条件运算符/三目运算符）</h3>
+
+<p>基于某些条件对变量进行赋值的条件运算符</p>
+
+<p>声明 变量名=(条件)?条件成立时将这个值给变量:条件不成立将这个值给到变量; <br>
+var num=(!0)?2:3;  – &gt;  num=2</p>
+
+<p>!0?alert(‘ok’):void (0); <br>
+void (0) 用来占位</p>
+
+<p>!0?(alert(‘ok’),console.log(‘ok’)):(alert(‘no’),console.log(‘no’)); <br>
+如果要执行的是多个语句，需要将这些语句放在一个括号中，用逗号隔开</p>
+
+
+
+<h2 id="循环">循环</h2>
+
+
+
+<h3 id="for循环">for循环</h3>
+
+<p>for循环适用于已知循环次数</p>
+
+<ul><li>声明一个变量 设置初始值</li>
+<li>设定循环范围</li>
+<li>执行循环体中的代码</li>
+<li>设置初始值的累加操作</li>
+</ul>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs gcode"><span class="hljs-comment line-number">1.</span>for<span class="hljs-comment">(var i=0;i&lt;=3;i++)</span>{<br><span class="hljs-comment line-number">2.</span>    循环体中的代码<br><span class="hljs-comment line-number">3.</span>    <span class="hljs-comment">//i++;</span><br><span class="hljs-comment line-number">4.</span>}<br></code></pre>
+
+
+
+<h4 id="break出现在循环体中break后面的代码不再执行整个循环结束">break出现在循环体中，break后面的代码不再执行，整个循环结束</h4>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs cpp"><span class="hljs-comment line-number">1.</span><span class="hljs-keyword">for</span> (var i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++){<br><span class="hljs-comment line-number">2.</span>        console.<span class="hljs-built_in">log</span>(i);<span class="hljs-comment">// 0</span><br><span class="hljs-comment line-number">3.</span>        <span class="hljs-keyword">break</span>;<br><span class="hljs-comment line-number">4.</span>        i++;<span class="hljs-comment">//两个i++都不会再执行了</span><br><span class="hljs-comment line-number">5.</span>    }<br><span class="hljs-comment line-number">6.</span>    console.<span class="hljs-built_in">log</span>(i);<span class="hljs-comment">// 0</span><br></code></pre>
+
+<h4 id="continue出现正在循环体中循环体continue后面的代码不执行但是循环依然正常">continue出现正在循环体中，循环体continue后面的代码不执行，但是循环依然正常</h4>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs cpp"><span class="hljs-comment line-number">1.</span><span class="hljs-keyword">for</span> (var i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++){<br><span class="hljs-comment line-number">2.</span>     console.<span class="hljs-built_in">log</span>(i);<span class="hljs-comment">// 0 1 2</span><br><span class="hljs-comment line-number">3.</span>        <span class="hljs-keyword">continue</span>;<br><span class="hljs-comment line-number">4.</span>     i++;<span class="hljs-comment">//只有这一行受到了影响</span><br><span class="hljs-comment line-number">5.</span>     }<br><span class="hljs-comment line-number">6.</span>     console.<span class="hljs-built_in">log</span>(i);<span class="hljs-comment">// 3</span><br></code></pre>
+
+<blockquote>
+  <p>i++  – &gt; 先赋值 再累加 <br>
+  ++i  – &gt; 先在自身累加 再赋值</p>
+</blockquote>
+
+
+
+<h3 id="for-in循环">for in循环</h3>
+
+<p>作用：遍历对象的属性名和属性值</p>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs javascript"><span class="hljs-comment line-number">1.</span><span class="hljs-keyword">var</span> obj={<br><span class="hljs-comment line-number">2.</span>        name:<span class="hljs-string">'珠峰'</span>,<br><span class="hljs-comment line-number">3.</span>        age:<span class="hljs-string">'9年'</span>,<br><span class="hljs-comment line-number">4.</span>        url:<span class="hljs-string">'www.zhufengpeixun.cn'</span><br><span class="hljs-comment line-number">5.</span>    };<br><span class="hljs-comment line-number">6.</span>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> obj){<br><span class="hljs-comment line-number">7.</span>        <span class="hljs-comment">//key 变量  代表这个对象的属性名</span><br><span class="hljs-comment line-number">8.</span>        <span class="hljs-built_in">console</span>.log(obj[key]);<br><span class="hljs-comment line-number">9.</span>        <span class="hljs-comment">//在遍历对象时，不知道这个对象的属性名是否存在数字，所以只能用对象名[变量名]的形式获取属性值</span><br><span class="hljs-comment line-number">10.</span>        <span class="hljs-comment">//obj[key] 中括号中是变量 而不是一个属性 所以不能加引号</span><br><span class="hljs-comment line-number">11.</span>    }<br><span class="hljs-comment line-number">12.</span>    <span class="hljs-comment">//for in循环只能遍历可枚举属性 （自定义属性）</span><br></code></pre>
+
+<p>1 隔行变色 <br>
+2 点击弹出 <br>
+3 自定义属性 <br>
+4 99 <br>
+5 选项卡</p>
+
+<p>数组的基础知识</p>
+
+<h2 id="复习">复习</h2>
+
+<p>js的定义 <br>
+js的引入方式 <br>
+js组成 <br>
+js的命名规范 <br>
+变量      属性名 <br>
+数据类型 <br>
+基本数据类型：数字  字符串 布尔 null undefined <br>
+引用数据类型： <br>
+对象数据类型：数组类（Array） 对象类（Object） 正则类 （RegExp） 数学函数类（Math） <br>
+函数数据类型：function <br>
+js的输出 <br>
+变量： <br>
+是用来储存值和代表值，弱类型语言所以变量在js中什么数据类型的值都可以放置 <br>
+声明 变量名=值； <br>
+var  ES5       let ES6</p>
+
+<p>对象 <br>
+对象名.属性名 <br>
+对象名[‘属性名’]</p>
+
+<p>Number()  <br>
+parseInt() <br>
+parseFloat() <br>
+数字或NaN <br>
+isNaN() <br>
+true false</p>
+
+<p>Boolean() &lt;==&gt; !! <br>
+! 先进行布尔运算后取反 <br>
+如何判断一个值是真是假：0  “” (空字符串) NaN null undefined</p>
+
+<p>![]  – &gt; false <br>
+!!{} – &gt;true</p>
+
+<p>只要两侧有引号的字符都是字符串，字符串在js中没有意义</p>
+
+<p>null 预留一个位置 <br>
+undefined  本应有值 但是没有</p></div></body></html>

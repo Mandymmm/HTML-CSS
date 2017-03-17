@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基本选择器-通配符选择器 *</title>
+    <style type="text/css">
+        ul, li {
+            list-style: none
+        }
+        .clearfix:after{
+            display: block;
+            content: '';
+            clear: both;
+            font-size:0;
+            height:0;
+        }
+        .box{
+            overflow: hidden;
+        }
+        .box ul{
+            padding:10px;
+        }
+        li {
+            float: left;
+            width: 30px;
+            height: 30px;
+            line-height:30px;
+            margin-right:10px;
+            border-radius:15px;
+            -moz-border-radius:15px;
+            -webkit-border-radius:15px;
+            text-align:center;
+            background:#3a96ec;
+            color:#00FF00;
+        }
+        /*通配符选择器*/
+        .box *{
+            border:1px solid #990000;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="clearfix">
+        <li id="first" class="first">1</li>
+        <li class="active important">2</li>
+        <li class="important items">3</li>
+        <li class="important">4</li>
+        <li class="items">5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li id="last" class="last">10</li>
+    </ul>
+</div>
+</body>
+</html>

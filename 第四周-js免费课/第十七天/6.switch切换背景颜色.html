@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn{
+            margin: 0 auto;
+            display: block;
+            width: 200px;
+            height: 50px;
+        }
+        div{
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+        }
+        .bg1{
+            background:linear-gradient(to bottom,red,green);
+        }
+        .bg2{
+            background: yellow;
+        }
+        .bg3{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<input type="button" class="btn" value="点击切换背景颜色">
+<div class="bg1">
+
+</div>
+<script>
+    var oBtn=document.querySelector('.btn'),oBox=document.querySelector('div');
+    //oBox.className='bg2';
+    oBtn.onclick=function () {
+        if(oBox.className==='bg1'){
+            oBox.className='bg2';
+        }else if(oBox.className==='bg2'){
+            oBox.className='bg3';
+        }else{
+            oBox.className='bg1';
+        }
+    }
+</script>
+<!--<script>
+    var oBtn=document.querySelector('.btn'),oBox=document.querySelector('.box');
+    oBtn.onclick=function () {
+        var bg=oBox.style.backgroundColor;
+        console.log(bg);//bg里面存储的是字符串"red"
+        switch (bg){
+            case 'red':
+                oBox.style.backgroundColor="green";
+                break;
+            case 'green':
+                oBox.style.backgroundColor="yellow";
+                break;
+            case 'yellow':
+                oBox.style.backgroundColor="blue";
+                break;
+            default:
+                oBox.style.backgroundColor="red"
+        }
+    }
+</script>-->
+<!--<script>
+    var oBtn=document.querySelector('.btn'),oBox=document.querySelector('.box');
+    //要点击oBtn的时候oBox的背景颜色变化
+    //点击第一次的时候，变成绿色，点击第二次的时候变成黄色，点击第三次的时候变成蓝色，点击第四次的时候变成红色，绿，黄，蓝
+    oBtn.onclick=function () {
+        /*if(oBox.style.backgroundColor==="red"){
+            oBox.style.backgroundColor='green';
+        }else if(oBox.style.backgroundColor==="green"){
+            oBox.style.backgroundColor='yellow';
+        }else if(oBox.style.backgroundColor==='yellow'){
+            oBox.style.backgroundColor='blue';
+        }else{
+            oBox.style.backgroundColor='red';
+        }*/
+        switch (oBox.style.backgroundColor){
+            case "red":
+                oBox.style.backgroundColor='green';
+                break;
+            case "green":
+                oBox.style.backgroundColor='yellow';
+                break;
+            case "yellow":
+                oBox.style.backgroundColor='blue';
+                break;
+            default:
+                oBox.style.backgroundColor='red';
+        }
+    };
+    // js是操作DOM的 css样式不能直接操作
+</script>-->
+</body>
+</html>

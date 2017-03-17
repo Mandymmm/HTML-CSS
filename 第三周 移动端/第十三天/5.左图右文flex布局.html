@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 100px;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both
+        }
+
+        .clearfix {
+            *zoom: 1
+        }
+
+        .m-section {
+            padding: .15rem;
+        }
+
+        .m-section .m-section-pic {
+            float: left;
+            width: 25%;
+            height: .8rem;
+            overflow: hidden;
+            margin-right: .1rem;
+        }
+
+        .m-section .m-section-pic img {
+            display: block;
+            width: 100%;
+            height:100%;
+        }
+
+        .m-section-msg {
+            position: relative;
+            display: flex;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            height: .8rem;
+        }
+
+        .m-section-tit {
+            font-size: .12rem;
+            color: #404040;
+            line-height: .15rem;
+            height: .3rem;
+            overflow: hidden;
+        }
+
+        .m-section-info {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            font-size: .14rem;
+            color: #a8a8a8;
+            display: flex;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            -webkit-box-pack: justify;
+        }
+
+        .m-section-info span {
+
+        }
+
+    </style>
+</head>
+<body>
+<section class="m-section clearfix">
+    <a href="#">
+        <div class="m-section-pic">
+            <img src="http://cms-bucket.nosdn.127.net/a74400a3e10745948b5be394fe5003a120170223162518.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1"
+                 alt=""/>
+        </div>
+        <div class="m-section-msg clearfix">
+            <div class="m-section-tit">国防部辟谣金正男遇害后中朝边境增兵：纯属捏造</div>
+            <div class="m-section-info">
+                <div class="m-section-l">
+                    <span class="time">15:00</span>
+                </div>
+                <div class="m-section-r">
+                    <span>1.2万</span>
+                </div>
+            </div>
+        </div>
+    </a>
+</section>
+</body>
+</html>

@@ -1,0 +1,116 @@
+.regBox{
+    padding-bottom:30%;
+}
+.regBox .reg-pic {
+    width: 1.22rem;
+    height: 1.22rem;
+    margin: .96rem auto 1.18rem;
+}
+
+.regBox .reg-pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-border-raidus: 50%;
+}
+
+.regForm {
+    padding: 0 .4rem;
+}
+.regForm .iptBox {
+    height: 0.8rem;
+    padding: 0 .3rem;
+    margin-bottom: .4rem;
+    line-height: 0.8rem;
+    border: 1px solid #d0d0d0;
+    font-size: .24rem;
+    color: #777;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+.regForm .iptBox span{
+    display:inline-block;
+    margin-right:.2rem;
+
+}
+.regForm .iptphoneBox{
+    padding:0;
+    border:0;
+}
+.iptBox .iptphone{
+    float:left;
+    width:60%;
+    height: 0.8rem;
+    line-height:.8rem;
+    padding: 0 .3rem;
+    border: 1px solid #d0d0d0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+}
+.regForm .iptBox input {
+    border: 0;
+}
+.iptphoneBox .send-btn{
+    float:right;
+    width:38%;
+    display: block;
+    height: 0.8rem;
+    line-height:.8rem;
+    text-align:center;
+    border:1px solid #188ae4;
+    color:#188ae4;
+    background:#d8edfe;
+    border-radius:4px;
+    -webkit-border-raidus:4px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.reg-btn-box {
+    width: 100%;
+    height: .8rem;
+    line-height: .8rem;
+    margin-top:.3rem;
+    background: #188ae4;
+    color: #fff;
+    font-size: .3rem;
+    text-align: center;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+
+}
+.reg-btn-box .reg-btn{
+    color: #fff;
+}
+.user-tip{
+    font-size: .24rem;
+    color: #188ae4;
+}
+.user-tip input{
+    width:.2rem;
+    height:.2rem;
+    border:1px solid #188ae4;
+    cursor:pointer;
+}
+.user-tip label{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    html {
+        font-size: 58.59375px
+    }
+}
+
+@media screen and (min-width: 414px) {
+    html {
+        font-size: 64.6875px
+    }
+}

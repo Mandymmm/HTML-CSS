@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型之间的比较</title>
+</head>
+<body>
+<script>
+    //比较的最终结果是布尔值
+    /*console.log({}=={});//false
+    console.log([]==[]);//false
+    console.log({}==[]);//false
+    console.log(function(){}==function(){});//false*/
+
+
+    []==[]  对象==对象  false
+    !{}==[] 布尔==对象  true
+    ![]=='' 布尔==字符串true
+    ![]==false  布尔==布尔  true
+    ''=={}  字符串==对象 false
+
+    !对象 --> false
+
+    对象  --> true
+
+
+    1 对象==对象  false
+    2 对象==字符串 对象转为字符串
+    3 对象==数字  对象转为字符串 字符串转为数字
+    4 对象==布尔  都转为数字
+    5 字符串==数字 字符串转为数字
+    6 字符串==布尔 都转为数字
+    7 数字==布尔 布尔转为数字
+    8 null==undefined true
+    9 null===undefined false
+    10 NaN==NaN false
+
+
+    parseFloat('12px')==!Number({})
+    {}.toString() --> '[object Object]'
+    Number({}) --> NaN
+    数字==布尔 12==1 false
+
+    ![]==!!0
+    布尔 == 布尔 false==false --> true
+
+    !{}==''
+    布尔 == 字符串  0==0
+
+    !{}==false
+    布尔==布尔  false==false
+
+    (Number([]+parseInt('.23')))==Number({})
+    数字==数字
+    parseInt('.23') -- NaN
+    NaN==NaN   false
+
+    !0==false
+    布尔==布尔  true == false
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

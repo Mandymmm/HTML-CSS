@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单元素</title>
+</head>
+<body>
+<!--
+type 的值 分别代表什么样的表单元素？
+每个表单元素怎样控制样式，并且能控制哪些样式？
+什么样的表单元素需要模拟（用html其他元素和css来重新写一个类似表单的结构）-->
+<!--html4的表单-->
+<form action="url" method="GET"><!--什么元素都能放-->
+    <label for="uName">用户名：</label>
+    <input type="text" placeholder="请填写用户名" id="uName" value="值" name="名称">
+    <!--label 行内元素  对应表单元素的名称-->
+    <!--input 表单标签-->
+    <!--type="text" text 此表单为文本框-->
+    <!--placeholder 提示信息 html5支持 文档声明需是html5-->
+    <br>
+    <label>密码：</label>
+    <input type="password" placeholder="请输入密码">
+    <!--value="123456"-->
+    <!--password 密码框 里面的内容是用点点点代替-->
+    <br>
+    <label>单选</label>
+    <!--将按钮分成一组 当name值相同的时候 单选按钮即为一组-->
+    <input type="radio" name="yes" checked="checked"> <label>有女朋友</label>
+    <input type="radio" name="yes"> <label>有男朋友</label>
+    <br>
+    <label>多选</label>
+    <input type="checkbox" checked="checked"><label>车</label>
+    <input type="checkbox" checked><label>美女</label>
+    <input type="checkbox" checked="true"><label>金钱</label>
+    <input type="checkbox"><label>代码</label>
+    <!--checked 选中状态
+    checked="checked"
+    checked
+    checked="true"
+    -->
+    <br>
+    <label>下拉菜单</label>
+    <select>
+        <option value="下拉项1">下拉项1</option>
+        <option>下拉项2</option>
+        <option>下拉项3</option>
+        <option>下拉项4</option>
+        <option>下拉项5</option>
+    </select>
+    <br>
+    <input type="hidden"><!--此按钮页面看不到或引入一些文件 这个按钮起到辅助功能-->
+    <br>
+    <input type="reset"><!--重置-->
+    <input type="button" value="普通按钮"><!--普通按钮-->
+    <input type="file"><!--上传文件-->
+    <!--<input type="image" src="url">&lt;!&ndash;引入图片&ndash;&gt;-->
+    <input type="submit"><!--提交按钮-->
+    <br>
+    <!--文本域 可以大量的输入内容 评论区-->
+    <textarea maxlength="10" minlength="2">内容</textarea>
+</form>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #btn {
+            width: 200px;
+            margin: 0 auto;
+            display: block;
+            height: 40px;
+            background: #ccc;
+            border: 0;
+        }
+
+        #box {
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<input type="button" name="btn" id="btn" value="点击变颜色"/>
+<div id="box" style="background: red;">
+
+</div>
+</body>
+<!--<script type="text/javascript">
+    var n = 1;
+    switch(n){
+      case 0:
+           alert(1);
+           break;
+      case 1:
+            alert(1);
+      case  2:
+             alert(3)
+
+       default:
+           alert('都不对')
+
+
+    }
+
+
+</script>-->
+</html>
+<script type="text/javascript">
+    var oBtn = document.querySelector('#btn');
+    var oBox = document.querySelector('#box');
+    oBtn.onclick = function () {
+        switch (oBox.style.backgroundColor) {
+            case 'red':
+                oBox.style.backgroundColor = 'greenyellow';
+                break;
+            case 'greenyellow':
+                oBox.style.backgroundColor = 'pink';
+                break;
+            case 'pink':
+                oBox.style.backgroundColor = 'linear-gradient(red,blue)'
+                break;
+            default:
+                oBox.style.backgroundColor = 'red';
+        }
+
+    }
+</script>

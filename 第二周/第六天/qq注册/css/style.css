@@ -1,0 +1,275 @@
+body,div,ul,ol,li,dl,dt,dd,form,input,select,p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+/*
+为什么不用“* 通配符选择器” ：是全部标签选择，浪费性能
+*/
+ul,ol{
+    list-style: none;
+}
+img{
+    border: none;
+    vertical-align: top;
+}
+a{
+    border: none;
+    text-decoration: none;
+}
+body{
+    font: 12px/1.5 "Microsoft YaHei";
+    color: #333333;
+    background-color: #f8fdff;
+}
+.clearfix{*zoom:1;}
+.clearfix:after{
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.box{
+    margin: 30px auto;
+    width: 604px;
+}
+.title-top{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    height: 30px;
+}
+.title-top h3{
+    border-left: 3px solid #59afe4;
+    padding-left: 6px;
+    line-height: 25px;/*块级元素的行高可以将盒子撑开*/
+    color: #616161;
+    font-weight: normal;
+    font-size: 18px;
+}
+.content{
+    margin-bottom: 15px;
+}
+.left{
+    float: left;
+    padding-right: 11px;
+    width: 115px;
+    text-align: right;
+    line-height: 32px;
+    font-size: 14px;
+}
+.center{
+    float: left;
+    width: 300px;
+}
+.center input,.list{
+    box-shadow: 1px 1px 1px rgba(0,0,0,.1) inset;
+    border: 1px solid #c0d0d8;
+    border-top-color: #a7b6c4;
+    border-radius: 3px;
+    padding: 0 7px;
+    width: 284px;
+    height: 33px;
+    line-height: 33px;
+    background-color: #f3f9fc;
+}
+.center input:focus{
+    background-color: #ffffff;
+}
+.right{
+    position: relative;
+    float: left;
+    width: 178px;
+}
+.right .name{
+    padding-left: 12px;
+    color: #808080;
+    line-height: 35px;
+}
+.right .err{
+    display: none;
+    padding-left: 12px;
+    color: #f66;
+    line-height: 35px;
+}
+.right .err img{
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.list-hidden{
+    position: absolute;
+    top: -18px;
+    left: 12px;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    padding: 5px 0 5px 12px;
+    width: 142px;
+    line-height: 22px;
+}
+.list-hidden span{
+    position: absolute;
+    top: 21px;
+    left: -12px;
+    border: 6px solid transparent;
+    /*[trænsˈpærənt]*/
+    border-right-color: #d1d1d1;
+    width: 0;
+    height: 0;
+}
+.list-hidden .btn-bom{
+    border-right-color: #f8fdff;
+    left: -11px;
+}
+.list-hidden img{
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.sex span,.article span{
+    display: inline-block;
+    border: 1px solid;
+    border-color:#c3cfd8 #c4d3dc #c4d3dc;
+    border-radius: 50%;
+    margin-right: 4px;
+    width: 14px;
+    height: 14px;
+    background-color: #e8f2fb;
+    vertical-align: middle;
+}
+.sex .cur i{
+    display: block;
+    border-radius: 50%;
+    margin: 3px;
+    width: 8px;
+    height: 8px;
+    background-color: #77de2c;
+}
+.sex label{
+    margin-right: 30px;
+}
+.sex-name{
+    line-height: 20px;
+}
+.list{
+    position: relative;
+    float: left;
+    margin-right: 4px;
+    padding: 0;
+    width: 58px;
+    height: 21px;
+}
+.list h4{
+    padding: 0 7px 0 4px;
+    line-height: 21px;
+    font-weight: normal;
+    color: #4199d7;
+}
+.list h4 span{
+    float: right;
+    margin-top: 9px;
+    border: 4px solid transparent;
+    border-top-color: #4199d7;
+
+}
+.list ul{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    border: 1px solid #67a6f8;
+    max-height: 152px;
+    background-color: #f3f9fc;
+}
+.list li{
+    line-height: 20px;
+    margin: 0 1px;
+}
+.list li:hover{
+    background-color: #57a8e4;
+    cursor: default;/*光标变箭头*/
+}
+.list:hover ul{
+    display: block;
+}
+.year{
+    width: 104px;
+}
+.city{
+    width: 95px;
+}
+.last{
+    margin-right: 0;
+}
+.m-b{
+    margin-bottom: 9px;
+}
+.password{
+    line-height: 20px;
+    color: #808080;
+}
+.password a{
+    margin-left: 20px;
+    color: #4199d7;
+}
+input.sign-up{
+    margin: 20px 0 28px;
+    border: none;
+    box-shadow: none;
+    width: 306px;
+    height: 52px;
+    font-size: 22px;
+    color: #fff;
+    background-color: #69b946;
+    cursor: pointer;
+}
+.article{
+    margin-bottom: 9px;
+    line-height: 16px;
+}
+.article span{
+    border-radius: 3px;
+    line-height: 14px;
+    text-align: center;
+    color: #33c528;
+}
+.article p{
+    display: inline-block;
+    position: relative;
+}
+.article p .warp{
+    position: relative;
+    top: 1px;
+    z-index: 1;
+    display: inline-block;
+    border: 1px solid transparent;
+    /*border: 1px solid #4191c3;*/
+    /*border-bottom-color: #f8fdff;*/
+    padding: 3px 5px 0;
+}
+.article p .btn{
+    display: inline-block;
+    border: 4px solid transparent;
+    border-top-color: #4191c3;
+    width: 0;
+    height: 0;
+}
+.hidden{
+    display: none;
+    position: absolute;
+    border: 1px solid #4191c3;
+    padding: 6px 8px;
+    width: 155px;
+    line-height: 18px;
+}
+.hidden a{
+    display: block;
+    font-style: normal;
+    color: #4191c3;
+}
+.article p:hover .warp{
+    border-color: #4191c3;
+    border-bottom-color: #f8fdff;
+}
+.article p:hover .hidden{
+    display: block;
+}

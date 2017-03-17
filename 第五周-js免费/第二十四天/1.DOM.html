@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        *{
+            width: 100%;height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="div1" name="div2">
+    <p></p>
+    <p></p>
+</div>
+<script>
+    // 1.DOM的获取方式
+    /*var oDiv=document.querySelector('div');
+    var oDiv=document.querySelector('.box');
+    var oDiv=document.querySelector('#div1');
+    var oDiv=document.querySelectorAll('div');//[div] oDiv[0]*/
+    // 不兼容ie低版本浏览器 （低版本 6~8）
+
+    // var oDiv=document.getElementById('div1');// 通过id 获取一个元素
+    // 范围只能是document  id也可以直接在js中使用
+
+    // var oDiv=document.getElementsByClassName('box');// [div]  oDiv[0]  不兼容ie低版本
+
+    // var oDiv=document.getElementsByTagName('div');// [div] oDiv[0]
+
+    // var oDiv=document.getElementsByName('div2');// [div]   oDiv[0]
+
+    // 获取html
+    // var oHtml=document.documentElement;
+
+    // 获取body
+    // var oBody=document.body;
+
+
+    // 如何创建元素节点
+    /*var oDiv=document.createElement('div');
+    // document.body.appendChild(oDiv);
+    var old=document.querySelector('.box');
+    document.body.insertBefore(oDiv,old);
+    var newDiv=old.cloneNode(false);
+    document.body.insertBefore(newDiv,old);
+    document.body.replaceChild(newDiv,oDiv);
+    newDiv.setAttribute('zhufeng','peixun');
+    var att=newDiv.getAttribute('zhufeng');
+    newDiv.removeAttribute('zhufeng');*/
+    
+    /*document.body.onclick=function () {
+        var oDiv=document.createElement('div');
+        oDiv.style.backgroundColor='rgba(0,0,0,.3)';
+        this.appendChild(oDiv);
+    }*/
+
+    // DOM节点
+    /*var oDiv=document.getElementById('div1');
+    var nodeAll=oDiv.childNodes;//[text, p, text, p, text]
+    var tagAll=oDiv.children;//[p, p]
+    // tagAll[0].style.height='100px';
+    // tagAll[0].style.backgroundColor='red';
+    // var pre=tagAll[1].previousElementSibling;
+    // var next=tagAll[1].nextSibling;
+    var f=oDiv.firstChild;
+    var l=oDiv.lastChild;*/
+
+
+    // Math
+    /*Math.abs(-4)// 取绝对值  4
+    Math.ceil(-1.3) // 向上取整  -1
+    Math.floor(-1.3) // 向下取整 -2
+    Math.round(1.3) // 四舍五入 1
+    Math.random() // 0-1 的随机小数 不包含1
+    // 取两个数之间的随机整数
+    Math.round(Math.random()*(m-n)+n)
+    Math.min(1,2,3)
+    Math.max(1,2,3)*/
+
+    // 0-9 4
+    /*var str='';
+    for (var i=0;i<4;i++){
+        var num=Math.round(Math.random()*9);
+        if (str.indexOf(num)===-1){
+            str+=num;
+        }else {
+            i--;
+        }
+    }
+    console.log(str);*/
+
+    // 字符串  是代表字符的变量
+    // var str='1bckhpfunction(){cosole.log("ok")}';
+    // var newStr=str.slice(6);
+    // var newStr=str.substr(6);
+    // var newStr=str.substring(6);
+    // var newStr=str.match('function(){cosole.log("ok")}');
+    // var newStr=str.split('p');
+    // var newStr1=newStr[1];
+    // var str1=str.replace('1','a');
+
+    // var str='珠峰培训欢迎您，北京欢迎您，但愿我在北京不成为背景';
+    // 在这个str中取出4个字符 并且不重复
+
+    /*var str='珠峰培训欢迎您，北京欢迎您，但愿我在北京不成为背景';
+    // 如何从字符串中找到字符 charAt(index) 0-24
+    // 查找到字符放在一个盒子里，在放盒子里面之前要进行判断，盒子之前有没有放置过这个字符
+    var str1='';
+    for (var i=0;i<4;i++){
+        var index=Math.round(Math.random()*(str.length-1));
+        var val=str.charAt(index);
+        if ((str1.indexOf(val)===-1)&&!(val=='，')){
+            str1+=val;
+        }else {
+            i--;
+        }
+    }
+    console.log(str1);*/
+
+    // 定时器
+    /*var temp1=window.setTimeout(function () {
+        // 1s之后执行一次这个里面的方法
+    },1000)
+    // temp1 接收到的是定时器的返回值 返回值以数字形式返回 每个返回值都代表我是window下的第几个定时器
+    var temp2=window.setInterval(function () {
+        // 每隔1s都会执行这个里面的方法
+    },1000)
+
+    // 清除定时器
+    window.clearTimeout(定时器)/window.clearInterval(定时器)*/
+
+    // 每次执行新的定时器之前，都要先清除一下原来的定时器
+
+    // 将上面的方法，每个1s执行一次 输出到页面上 3s后结束
+
+    var temp=null;
+    var num=0;
+    function getStr() {
+        var str='珠峰培训欢迎您，北京欢迎您，但愿我在北京不成为背景';
+        var newStr='';
+        for (var i=0;i<4;i++){
+            var index=Math.round(Math.random()*(str.length-1));
+            var val=str.charAt(index);
+            if (newStr.indexOf(val)===-1&&!(val==='，')){
+                newStr+=val;
+            }else {
+                i--;
+            }
+        }
+        document.body.innerText=newStr;
+        temp=window.setTimeout(getStr,1000);
+        num++;
+        if (num===3){
+            clearInterval(temp);
+        }
+    }
+    //getStr();
+    temp=window.setTimeout(getStr,1000);
+   /* window.setTimeout(function () {
+        clearInterval(temp);
+    },3000)*/
+
+</script>
+</body>
+</html>

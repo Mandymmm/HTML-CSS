@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{
+            height: 1000px;
+            background-color: #2791d0;
+        }
+        .parent{
+            position: relative;
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            background-color: rebeccapurple;
+        }
+        .son{
+            position: absolute;/*绝对定位*/
+            bottom: 40px;
+            top:20px;
+            left: -10px;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .sonspan{
+            background-color: red;
+            top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="son"></div>
+    <span class="son sonspan"></span>
+    <p style="width: 200px;height: 200px;background-color: aqua;"></p>
+</div>
+</body>
+</html>

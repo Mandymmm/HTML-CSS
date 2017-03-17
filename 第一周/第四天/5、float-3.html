@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .clearfix{*zoom:1;}
+        .clearfix:after{
+            display: block;
+            content: "";
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+        ul{
+            background-color: antiquewhite;
+        }
+        li{
+            float: right;
+            border: 2px solid yellow;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<ul class="clearfix">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<div style="height: 100px;background-color: red">
+
+</div>
+</body>
+</html>

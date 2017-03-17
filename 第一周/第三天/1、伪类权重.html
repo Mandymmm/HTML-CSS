@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        p:hover{
+            background-color: red;
+        }
+        /*p{background-color: blue;}*/
+        /*伪类选择器和标签选择器比较，无论谁在上面二者效果都起作用，即标签选择器不会覆盖伪类*/
+        /*.box{background-color: blue;}*/
+        /*伪类和类选择器比较，同和标签选择器相同，则有伪类权重大于等于10*/
+        p.box{background-color: blue;}
+        /*和标签与类组成的交集选择器比较，交集选择器（权重11）会覆盖伪类选择器的效果，即伪类不起作用，则有伪类权重小于11*/
+    </style>
+</head>
+<body>
+<p class="box">
+    内容
+</p>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>十秒后的世界</title>
+    <style>
+        div{border: 2px solid #ff6700;width: 200px;height: 100px;font-size: 30px;line-height: 100px;text-align: center}
+    </style>
+</head>
+<body>
+<button>点击开始</button>
+<div>还没开始</div>
+<script>
+    var oBtn=document.querySelector('button');
+    var oDiv=document.querySelector('div');
+    var temp=null;// 接收定时器的返回值
+    var cont=0;
+    function getNum() {
+        clearTimeout(temp);
+        var str='';
+        for (var i=0;i<4;i++){
+            str+=Math.round(Math.random()*9);
+        }
+        oDiv.innerText=str;
+        temp=window.setTimeout(getNum,1000);
+        cont++;
+        if (cont===3){
+            clearTimeout(temp);
+        }
+    }
+    var flag=false;
+    oBtn.onclick=function () {
+        if (!flag){
+            getNum();
+            flag=true
+        }
+        // temp=window.setTimeout(getNum,1000);
+    }
+
+
+</script>
+
+
+
+
+<!--<script>
+    var oBtn=document.querySelector('button');
+    var oDiv=document.querySelector('div');
+    var temp=null;// 接收定时器的返回值
+    var con=0;
+    // 写一个方法 取随机整数
+    function getName() {
+        var str='';// 取到的随机数都放在这个字符串中
+        for (var i=0;i<4;i++){
+            str+=Math.round(Math.random()*9);
+        }
+        oDiv.innerText=str;
+        con++;//每一次 getName执行的时候 con都会在之前的值上累加1 当con=3的时候 将定时器清除掉
+        if (con===3){
+            clearTimeout(temp);
+        }
+    }
+    oBtn.onclick=function () {
+        temp=window.setInterval(getName,1000);
+    }
+
+
+
+
+
+
+
+</script>-->
+</body>
+</html>

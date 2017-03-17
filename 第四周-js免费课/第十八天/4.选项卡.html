@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul{list-style: none;}
+        .clearfix:after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        body{
+            font: 12px/1.5 "Microsoft YaHei";
+            background-color: #59afe4;
+        }
+        .box{
+            overflow: hidden;
+            margin: 20px auto;
+            border: 1px solid #ebebeb;
+            border-radius: 3px;
+            width: 300px;
+            background-color: #fff;
+        }
+        ul{
+            width: 302px;
+            background-color: #fcfcfc;
+        }
+        li{
+            float: left;
+            border-bottom: 1px solid #ebebeb;
+            height: 41px;
+            width: 74px;
+            text-align: center;
+            line-height: 41px;
+            cursor: pointer;
+        }
+        p{
+            display: none;
+            text-align: center;
+            line-height: 40px;
+        }
+        p.cur{
+            display: block;
+        }
+        li.cur{
+            margin-left: -1px;
+            padding-right: 2px;
+            border-bottom-color: #fff;
+            border-left: 1px solid #ebebeb;
+            border-right: 1px solid #ebebeb;
+            width: 150px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="clearfix">
+        <li>小组更新</li>
+        <li class="cur">我的小组</li>
+        <li>热门话题</li>
+    </ul>
+    <p>小组更新</p>
+    <p class="cur">我的小组</p>
+    <p>热门话题</p>
+</div>
+<script>
+    var oLis=document.querySelectorAll('li'),oP=document.querySelectorAll('p');
+    // 写一个方法
+    function tab(index) {//index 点击对象的索引值
+        //1 将所有li和p标签的类名去掉
+        for (var i=0;i<oLis.length;i++){
+            oLis[i].className='';
+            oP[i].className='';
+        }
+        oLis[index].className='cur';
+        oP[index].className='cur';
+    }
+    for (var i=0;i<oLis.length;i++){
+        oLis[i].myIndex=i;
+        oLis[i].onclick=function () {
+            tab(this.myIndex);
+        }
+    }
+</script>
+<!--<script>
+    //在点击一个对象的时候，让所有对象的类名都清除，然后再将这个类名添加给点击的对象和点击对象对应的盒子
+    //获取要操作者的元素
+    var oLis=document.querySelectorAll('li'),oP=document.querySelectorAll('p');
+    //oLis 三个li  oP 三个p
+    //1 给每一个要点击的li绑定一个点击事件
+    for (var j=0;j<oLis.length;j++){
+        oLis[j].index=j;//0 1 2
+        oLis[j].onclick=function () {
+            //console.log(j);//3
+            for (var i=0;i<oLis.length;i++){
+                oLis[i].className='';
+                oP[i].className='';
+            }
+            this.className='cur';
+            oP[this.index].className='cur';
+        }
+    }
+    /*oLis[0].onclick=function () {
+        for (var i=0;i<oLis.length;i++){
+            oLis[i].className='';
+            oP[i].className='';
+        }
+        this.className='cur';
+        oP[0].className='cur';
+        /!*oLis[0].className='';
+        oLis[1].className='';
+        oLis[2].className='';
+        oP[0].className='';
+        oP[1].className='';
+        oP[2].className='';*!/
+    }
+    oLis[1].onclick=function () {
+        for (var i=0;i<oLis.length;i++){
+            oLis[i].className='';
+            oP[i].className='';
+        }
+        this.className='cur';
+        oP[1].className='cur';
+        /!*oLis[0].className='';
+        oLis[1].className='';
+        oLis[2].className='';
+        oP[0].className='';
+        oP[1].className='';
+        oP[2].className='';*!/
+    }
+    oLis[2].onclick=function () {
+        for (var i=0;i<oLis.length;i++){
+            oLis[i].className='';
+            oP[i].className='';
+        }
+        this.className='cur';
+        oP[2].className='cur';
+        /!*oLis[0].className='';
+        oLis[1].className='';
+        oLis[2].className='';
+        oP[0].className='';
+        oP[1].className='';
+        oP[2].className='';*!/
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+</script>-->
+</body>
+</html>

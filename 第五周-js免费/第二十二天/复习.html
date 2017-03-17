@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习</title>
+</head>
+<body>
+<script>
+    //var ary=['a',22,'3b'];
+    //var ary1=ary.splice(0);
+    //console.log(ary,ary1);
+    //var ary1=ary.splice(1,1,'xxx');
+    //console.log(ary,ary1);
+    // 利用splice 将'xx' 'yy' 添加到数组开始
+    //var ary1=ary.splice(0,0,'xx','yy');
+    //splice(n,m,x) --> 从索引n开始删除m个 将x替换到删除的那部分
+    //var ary1=ary.splice(ary.length,0,'xx','yy');
+    //var ary1=ary.splice(ary.length-1,1);
+    //var ary1=ary.splice(ary.length-1);
+    //var ary1=ary.length--;
+    //console.log(ary,ary1);
+    var ary=['a',22,'a','3b','a'];
+    var ary1=['ccc'];
+    ary.indexOf('a');//0
+    ary.lastIndexOf('a');//3
+    console.log(ary.concat(ary1,'1'));
+    ary.sort(function (a,b) {
+        return a-b;
+    })
+</script>
+</body>
+</html>

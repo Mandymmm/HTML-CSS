@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换背景颜色</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="body">
+<script>
+    var oBody=document.querySelector('.body');
+    //第一次点击变成红色，第二次点击变成绿色，第三次点击变成红色，第四次点击变成绿色......
+    oBody.onclick=function () {
+        //无论现在body元素的背景是什么颜色，我都要让背景变为红色
+        //oBody.style.backgroundColor='red';
+        if(oBody.style.backgroundColor=='red'){
+            //获取到的颜色为红色 则改变其背景颜色为绿色
+            oBody.style.backgroundColor='green';
+        }else{
+            //只要if()内的代码不成立 就会执行这一行 背景为红色
+            oBody.style.backgroundColor='red';
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+</script>
+<!-- style="background-color: red"-->
+<!--<script>
+    var oBody=document.querySelector('.body');
+    //声明一个叫做oBody的变量用来存储和代表在整个文档中通过选择器获取的元素
+    //document 文档
+    /*console.log(oBody);
+    console.dir(oBody);*/
+    //oBody.myselfName='自己咯';
+    //querySelector 通过选择器去查找  &#45;&#45; 获取DOM对象
+    oBody.style.backgroundColor='red';
+    //像oBody行内添加css
+    oBody.onclick=function () {
+        oBody.style.backgroundColor='green';
+    };
+    //html和body是块级元素 宽度是父级内容的宽度，高度是本身内容的高度
+</script>-->
+</body>
+</html>

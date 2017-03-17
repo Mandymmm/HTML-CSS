@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素子节点</title>
+</head>
+<body>
+<div id="box">
+    <p>1p</p>
+    <ul>
+        <li>ul和li</li>
+    </ul>
+    <input type="text">
+</div>
+<script>
+    //先获取所有的子节点
+    //判断子节点是否为元素节点 nodeType值===1的时候 为元素节点
+    var oBox=document.getElementById('box');
+    var oBoxNodes=oBox.childNodes;//[text, p, text, ul, text, input, text]
+    // 判断oBoxNodes里面的每一项的nodeType的值===1 ，如果和1相等 我就留下 如果不相等 就不去管它
+    var obj={};// 这是一个盒子 符合条件的对象就当做属性值存在里面
+    // {} == >键值对 属性名和属性值 属性名不能重复
+    /*obj[1]=1;
+    obj[1]=2;
+    obj={
+        1:2
+    }*/
+    //把获取到的元素名称即当做对象的属性名，又当做属性值存到这个对象中
+    /*obj.p='p'
+    obj.ul='ul'*/
+    for (var i=0;i<oBoxNodes.length;i++){
+        if (oBoxNodes[i].nodeType===1){
+            //obj[(oBoxNodes[i].nodeName)]=oBoxNodes[i].nodeName;
+            obj[i]=oBoxNodes[i].nodeName;
+        }
+    }
+    console.log(obj);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //var oBox=document.getElementById('box');
+    //var oBoxNodes=oBox.childNodes;//[text, p, text, ul, text, input, text]
+    //console.log(oBox,oBoxNodes);
+    //var str='';//对象数据类型遇到字符串拼接都会转为字符串 {} == > '[object Class]'
+    /*var obj={};//key：value key 不同
+    //[object HTMLParagraphElement][object HTMLUListElement][object HTMLInputElement]
+    for (var i=0;i<oBoxNodes.length;i++){
+        if (oBoxNodes[i].nodeType===1){
+
+        }
+    }
+    console.log(obj);*/
+    /*if (oBoxNodes[0].nodeType===1){
+        str+=oBoxNodes[0];
+    }
+    if (oBoxNodes[1].nodeType===1){
+        str+=oBoxNodes[1];
+    }*/
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

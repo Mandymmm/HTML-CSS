@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{background-color: red;}
+        p:before{
+            display:block;/*给这个伪元素一个元素属性 block是块级元素*/
+            content:"我是那个不存在的元素前";
+        }
+        p:after{
+            display:inline;/*行内元素*/
+            content:"我是那个不存在的元素后";
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    <!--<before></before>-->
+    本身有内容
+    <!--<after></after>-->
+</p>
+</body>
+</html>

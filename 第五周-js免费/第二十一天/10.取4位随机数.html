@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取4位随机数</title>
+    <style>
+        #box{
+            margin: 0 auto;
+            width: 300px;
+            height: 100px;
+            background-color: #2b7dd1;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            font-size: 40px;
+        }
+        button{
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: 50px;
+            background-color: orangered;
+            color: #fff;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<button>点我换一组数字</button>
+<div id="box">
+
+</div>
+<script>
+    // 封装一个方法 这个方法用来获取4个随机整数
+    function num(m,n) {
+        m=Number(m);
+        n=Number(n);
+        if(isNaN(m)||isNaN(n)){
+            box.innerText='X';
+            return;// 终止这个函数
+        }
+        if (m<n){
+            var temp=m;
+            m=n;
+            n=temp;
+        }
+        var str='';
+        for (var i=0;i<4;i++){
+            str+=Math.round(Math.random()*(m-n)+n)+' ';
+        }
+        box.innerText=str;
+
+        /*var num1=Math.round(Math.random()*61);
+        var num2=Math.round(Math.random()*61);
+        var num3=Math.round(Math.random()*61);
+        var num4=Math.round(Math.random()*61);
+        box.innerText=num1+" "+num2+" "+num3+" "+num4;*/
+    }
+    num('a',61);
+    var oBtn=document.getElementsByTagName('button');//[button]
+    oBtn[0].onclick=num;
+    /*||
+    oBtn[0].onclick=function () {
+        num();
+    };*/
+
+
+
+
+    //oBtn[0].onclick=num();
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>派生选择器</title>
+    <!--<style>
+        div li{width: 100px;height: 100px;background-color: red;}
+    </style>-->
+</head>
+<body>
+<!--div>ul>li+tab-->
+<!--<div>
+    <ul>
+        <li>1111</li>
+    </ul>
+</div>-->
+<!--ul>li{222}+tab-->
+<!--<ul>
+    <li>222</li>
+</ul>-->
+<style>
+    div ul li p{background-color: yellow;}
+    div ol li p{background-color: blue;}
+
+    .box ul li p{background-color: yellow;}
+    .box ol li p{background-color: blue;}
+
+    ul p{background-color: yellow;}
+    ol p{background-color: blue;}
+
+    .list1 p{}
+    .list2 p{}
+</style>
+
+<div class="box">
+    <ul>
+        <li class="list1">
+            <p>黄色</p>
+        </li>
+    </ul>
+    <ol>
+        <li class="list2">
+            <p>蓝色</p>
+        </li>
+    </ol>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

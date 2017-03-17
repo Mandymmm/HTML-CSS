@@ -1,0 +1,207 @@
+<!DOCTYPE html><html><head><title>第二周第一天</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style>
+.note-content  {font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif;}
+
+</style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="第二周第一天">第二周第一天</h1>
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><a href="#第二周第一天">第二周第一天</a><ul>
+<li><a href="#dom">DOM</a><ul>
+<li><a href="#获取dom对象的方法">获取DOM对象的方法</a></li>
+<li><a href="#dom节点">DOM节点</a></li>
+<li><a href="#dom节点的增删改查">DOM节点的增删改查</a><ul>
+<li><a href="#创建元素节点">创建元素节点</a></li>
+<li><a href="#将新创建的元素节点添加到指定元素所有内容之后末尾">将新创建的元素节点添加到指定元素所有内容之后（末尾）</a></li>
+<li><a href="#将创建的元素添加到已有元素之前">将创建的元素添加到已有元素之前</a></li>
+<li><a href="#创建属性节点">创建属性节点</a></li>
+<li><a href="#删除创建的元素节点">删除创建的元素节点</a></li>
+<li><a href="#克隆元素节点-kloʊn">克隆元素节点  [kloʊn]</a></li>
+<li><a href="#替换元素节点-rɪˈples">替换元素节点   [rɪˈples]</a></li>
+</ul>
+</li>
+<li><a href="#math方法及应用">Math方法及应用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2 id="dom">DOM</h2>
+
+
+
+<h3 id="获取dom对象的方法">获取DOM对象的方法</h3>
+
+<ul><li><p>通过id获取<strong>一个</strong>元素 <br>
+<code>document.getElementById('idName')</code></p>
+
+<ul>
+<li>document是获取范围，通过id获取的时候，范围只能是document</li>
+<li>如果页面上有两个以上相同的id名称，获取第一个</li>
+<li>在ie67中，会将表单元素的name属性值当做id名称来调取，并且不区分大小写</li>
+<li>可以直接调用id代表这个元素（不推荐）</li></ul></li>
+<li><p>通过标签名获取<strong>一组</strong>元素 <br>
+<code>document.getElementsByTagName('tagName')</code></p>
+
+<ul>
+<li>获取到的是一个集合，类数组（索引、长度）</li>
+<li>document是一个可以变的范围</li>
+<li>获取的时候通过集合中的索引来进行获取  obj[0] / obj.item(0)</li></ul></li>
+<li><p>通过标签属性name的值获取<strong>一组</strong>元素 <br>
+<code>document.getElementsByName('name')</code></p>
+
+<ul>
+<li>获取到的是一个集合，类数组（索引、长度）</li>
+<li>document是一个可以变的范围</li>
+<li>获取的时候通过集合中的索引来进行获取  obj[0] / obj.item(0)</li>
+<li>在ie6-9浏览器下，只对表单元素起作用</li></ul></li>
+<li><p>通过标签属性class的值获取<strong>一组</strong>元素 <br>
+<code>document.getElementsByClassName('className')</code></p>
+
+<ul>
+<li>获取到的是一个集合，类数组（索引、长度）</li>
+<li>document是一个可以变的范围</li>
+<li>获取的时候通过集合中的索引来进行获取  obj[0] / obj.item(0)</li>
+<li>在ie678中报错</li></ul></li>
+<li><p>通过根元素获取</p></li>
+</ul>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs dart"><span class="hljs-comment line-number">1.</span><span class="hljs-built_in">document</span>.documentElement<span class="hljs-comment">//获取html元素</span><br><span class="hljs-comment line-number">2.</span><span class="hljs-built_in">document</span>.body <span class="hljs-comment">//获取body元素</span><br><span class="hljs-comment line-number">3.</span><span class="hljs-comment">//获取当前页面的宽度和高度</span><br><span class="hljs-comment line-number">4.</span><span class="hljs-keyword">var</span> width=<span class="hljs-built_in">document</span>.documentElement.clientWidth||<span class="hljs-built_in">document</span>.body.clientWidth<br><span class="hljs-comment line-number">5.</span><span class="hljs-comment">//client [ˈklaɪənt] 客户端 当前 当事人</span><br><span class="hljs-comment line-number">6.</span><span class="hljs-keyword">var</span> height=<span class="hljs-built_in">document</span>.documentElement.clientHeight||<span class="hljs-built_in">document</span>.body.clientHeight<br></code></pre>
+
+<ul><li>在移动端我们获取元素常用的方法（ ie678不兼容）</li>
+</ul>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs dart"><span class="hljs-comment line-number">1.</span><span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">"#id"</span>);<span class="hljs-comment">//获取一个</span><br><span class="hljs-comment line-number">2.</span><span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelectorAll</span>(<span class="hljs-string">".class"</span>);<span class="hljs-comment">//获取一组</span><br><span class="hljs-comment line-number">3.</span><span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelectorAll</span>(<span class="hljs-string">"#tab li"</span>);<br><span class="hljs-comment line-number">4.</span>p.s：选择器参考css选择器的规则<br></code></pre>
+
+
+
+<h3 id="dom节点">DOM节点</h3>
+
+<p>Node 在页面中出现的所有东西都是节点，元素、注释、文本等都是节点 <br>
+应用场景：通过节点可以进行DOM对象的增删改查</p>
+
+<p>常用的DOM节点有哪些？</p>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs nginx"><span class="hljs-comment line-number">1.</span><span class="hljs-title">childNodes</span> 获取所有的子节点（一组）<br><span class="hljs-comment line-number">2.</span>children   获取所有元素子节点（一组）<br><span class="hljs-comment line-number">3.</span>parentNode 获取父亲节点<br><span class="hljs-comment line-number">4.</span>previousSibling 获取上一个节点<br><span class="hljs-comment line-number">5.</span>previousElementSibling 上一个元素节点（不兼容）<br><span class="hljs-comment line-number">6.</span>nextSibling 获取弟弟节点   <br><span class="hljs-comment line-number">7.</span>nextElementSibling下一个元素节点（不兼容）<br><span class="hljs-comment line-number">8.</span>firstChild 获取子节点中的第一个<br><span class="hljs-comment line-number">9.</span>firstElementChild （不兼容）<br><span class="hljs-comment line-number">10.</span><span class="hljs-built_in">last</span>Child  获取子节点中最后一个<br></code></pre>
+
+<table>
+<thead>
+<tr>
+  <th align="center">节点类型</th>
+  <th align="center">nodeType</th>
+  <th align="center">nodeName</th>
+  <th align="center">nodeValue</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="center">元素节点（元素标签）</td>
+  <td align="center">1</td>
+  <td align="center">大写的标签名</td>
+  <td align="center">null</td>
+</tr>
+<tr>
+  <td align="center">文本节点（文字）</td>
+  <td align="center">3</td>
+  <td align="center">text</td>
+  <td align="center">文字内容</td>
+</tr>
+<tr>
+  <td align="center">注释节点（注释）</td>
+  <td align="center">8</td>
+  <td align="center">comment</td>
+  <td align="center">注释内容</td>
+</tr>
+<tr>
+  <td align="center">document（整个文档）</td>
+  <td align="center">9</td>
+  <td align="center">document</td>
+  <td align="center">null</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="dom节点的增删改查">DOM节点的增删改查</h3>
+
+
+
+<h4 id="创建元素节点">创建元素节点</h4>
+
+<p>createElement()            create[kriˈet]  创造 创建</p>
+
+<h4 id="将新创建的元素节点添加到指定元素所有内容之后末尾">将新创建的元素节点添加到指定元素所有内容之后（末尾）</h4>
+
+<p>oDiv.parentNode.appendChild(oDiv);</p>
+
+<blockquote>
+  <p>appendChild 前是oDiv的父级元素节点</p>
+</blockquote>
+
+<h4 id="将创建的元素添加到已有元素之前">将创建的元素添加到已有元素之前</h4>
+
+<p>父级元素.insertBefore(要放置的元素，放在谁之前) <br>
+oldTag.parentNode.insertBefore(newTag,oldTag)</p>
+
+<blockquote>
+  <p>创建的元素于已有元素为兄弟关系</p>
+</blockquote>
+
+
+
+<h4 id="创建属性节点">创建属性节点</h4>
+
+<p>setAttribute(属性名,属性值)–直接向对象添加一对键值对  attribute[əˈtrɪbjut]  属性 <br>
+这个属性会在html标签中显示</p>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs javascript"><span class="hljs-comment line-number">1.</span>oDiv.setAttribute(<span class="hljs-string">'zhufeng'</span>,<span class="hljs-string">'peixun'</span>);<span class="hljs-comment">//显示在标签内</span><br><span class="hljs-comment line-number">2.</span><span class="hljs-built_in">console</span>.log(oDiv.getAttribute(<span class="hljs-string">'zhufeng'</span>));<br><span class="hljs-comment line-number">3.</span>oDiv.removeAttribute(<span class="hljs-string">'zhufeng'</span>);<br></code></pre>
+
+
+
+<h4 id="删除创建的元素节点">删除创建的元素节点</h4>
+
+<p>父级元素.removeChild(删除的对象) <br>
+oDiv.parentNode.removeChild(oDiv) <br>
+已有的和新创建的元素节点都可以移除</p>
+
+<h4 id="克隆元素节点-kloʊn">克隆元素节点  [kloʊn]</h4>
+
+<p>oDiv.cloneNode(true)  <br>
+ 默认参数为false（不填参数）：只克隆当前元素 <br>
+ true ：克隆当前元素与元素的所有子节点</p>
+
+
+
+<h4 id="替换元素节点-rɪˈples">替换元素节点   [rɪˈples]</h4>
+
+<p>父级元素.replaceChild(替换的对象，被替换的对象) <br>
+ oDiv.parentNode.replaceChild(替换的对象，被替换的对象)</p>
+
+
+
+<h3 id="math方法及应用">Math方法及应用</h3>
+
+<ul><li>Math.abs() 取绝对值</li>
+<li>Math.ceil()向上取整 （出现小数点就向上＋1） [si:l]</li>
+<li>Math.floor()向下取整  [flɔr]</li>
+<li>Math.round()四舍五入 [raʊnd]</li>
+<li>Math.max(val1,val2,val3…)取最大值</li>
+<li>Math.min(val1,val2,val3…)取最小值</li>
+<li>Math.random()获取[0-1)之间的随机小数（不包含1）[ˈrændəm]</li>
+<li>Math.round(Math.random()*(m-n)+n) 获取任意两个数之间的随机数</li>
+</ul></div></body></html>

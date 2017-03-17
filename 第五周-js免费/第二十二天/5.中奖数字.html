@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中奖</title>
+    <style>
+        #btn {
+            display: block;
+            margin: 0 auto;
+            width: 50px;
+            height: 50px;
+        }
+
+        #box {
+            margin: 0 auto;
+            width: 200px;
+            height: 50px;
+            border: 2px solid #ff6700;
+            border-radius: 5px;
+            line-height: 50px;
+            text-align: center;
+            letter-spacing: 10px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点击中奖</button>
+<div id="box">中奖区</div>
+<!--
+一个按钮
+一个装数字的盒子 数字保持4个  0-9
+点击按钮后 每过1s数字更替 再次点击 结束展示最后四个数字
+并弹出 '恭喜你中奖了，请联系15711314152，并将手续费3000元打入xxx账号'
+-->
+<script>
+    var oDiv=document.querySelector('#box');
+    var oBtn=document.querySelector('#btn');
+    // 定义一个方法，随机在0-9范围内取出4个数字 将这四个数字放到box中
+    function getNum() {
+        // 找一个盒子 去装4次取到的数字
+        var str='';
+        // 取四次0-9的随机整数
+        for (var i=0;i<4;i++){
+            str+=Math.round(Math.random()*9);
+        }
+        oDiv.innerText=str;
+    }
+    var temp=null;//定义一个变量为空 用来接收定时器的返回值
+    oBtn.onclick=function () {//给按钮绑定一个点击事件 点击时触发一个函数
+        if (!temp){//如果!temp 为true的时候 说明temp中值为null，那么代表定时器还没有被触发，我就就让定时器执行
+            //clearTimeout(temp);//防止多次点击 每一次点击前，之前的定时器没有被清除，导致定时器累加
+            temp=window.setInterval(getNum,1000);
+        }else {//temp中得到了一个定时器的返回值，说明定时器已经被触发过了，我们直接将定时器清除即可
+            clearTimeout(temp);
+            alert('恭喜你中奖了，请联系15711314152，并将手续费3000元打入xxx账号');
+            temp=null;// 清除定时器后 将temp中存的定时器返回结果也清除掉，为了再次点击的时候 可以再次触发定时器
+        }
+
+    }
+</script>
+</body>
+</html>

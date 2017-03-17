@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>background-size</title>
+    <style type="text/css">
+        h2 {
+            font-size: 16px
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border: 10px dotted #3a96ec;
+            background: #2a2a2a;
+            color: #fff;
+            background: url(img/meinv.jpg) no-repeat;
+
+        }
+
+        .cover .box {
+            background-size: cover;
+        }
+
+        .contain .box {
+            background-size: contain;
+        }
+
+        .length .box {
+            background-size: 100px 140px;
+        }
+    </style>
+</head>
+<body>
+<div class="cover">
+    <h2>cover:将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。</h2>
+    <div class="box"></div>
+</div>
+<div class="contain">
+    <h2>contain:将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。</h2>
+    <div class="box"></div>
+</div>
+<div class="length">
+    <h2>length:自定义背景图像大小</h2>
+    <div class="box"></div>
+</div>
+</body>
+</html>

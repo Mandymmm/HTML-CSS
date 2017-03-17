@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js的输出方式</title>
+    <style>
+        body{
+
+        }
+    </style>
+</head>
+<body>
+欢迎大家来到珠峰培训！！！
+<div id="box"></div>
+<script>
+    /*document.write('My');
+    document.write(' First ');
+    document.write('JavaScript');
+    console.log('欢迎来到珠峰！');
+    var obj={name:"珠峰"};
+    console.dir(obj);
+    console.log(obj);
+    console.error('错啦，不告诉你错哪了！');*/
+//    console.clear();
+//innerHTML或者innerText的时候 是需要指定元素的
+
+    console.log(document.documentElement.innerHTML);
+    console.log(document.documentElement.innerText);
+
+
+    //document.getElementById('box').innerHTML='<p style="color:red;">我是输出的内容，看看我的威力</p>';
+    //document.getElementById('box').innerText='<p style="color:red;">我是输出的内容，看看我的威力</p>';
+    //document.getElementById('box').innerText='<span style="color:red;">我是输出的内容，看看我的威力</span>';
+    console.dir(document.getElementById('box'));
+
+
+
+
+
+
+</script>
+</body>
+</html>

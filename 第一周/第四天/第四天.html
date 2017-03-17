@@ -1,0 +1,385 @@
+<!DOCTYPE html><html><head><title>第四天</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style>
+.note-content  {font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif;}
+
+</style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="第四天">第四天</h1>
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><a href="#第四天">第四天</a><ul>
+<li><a href="#复习">复习</a><ul>
+<li><a href="#盒子模型">盒子模型</a></li>
+<li><a href="#bfc-ifc">BFC IFC</a><ul>
+<li><a href="#bfc-块级盒子的渲染模式">BFC 块级盒子的渲染模式</a></li>
+<li><a href="#ifc-行内盒子的渲染模式">IFC  行内盒子的渲染模式</a></li>
+</ul>
+</li>
+<li><a href="#overflow-溢出">overflow 溢出</a></li>
+<li><a href="#水平对齐方式">水平对齐方式</a><ul>
+<li><a href="#text-alignleftcenterright">text-align:left/center/right</a></li>
+<li><a href="#margin0-auto-让块级元素在其父级元素内居中显示">margin:0 auto; 让块级元素在其父级元素内居中显示</a></li>
+</ul>
+</li>
+<li><a href="#文字的垂直对齐方式">文字的垂直对齐方式</a></li>
+<li><a href="#单行文字超出部分用省略号代替">单行文字超出部分用省略号代替</a></li>
+</ul>
+</li>
+<li><a href="#浮动-float">浮动 float</a><ul>
+<li><a href="#解决文档流元素不识别浮动元素的方法">解决文档流元素不识别浮动元素的方法</a><ul>
+<li><a href="#盒子在视野之中消失">盒子在视野之中消失</a></li>
+<li><a href="#zoom">zoom</a></li>
+<li><a href="#清除浮动">清除浮动</a></li>
+<li><a href="#浮动元素的特点">浮动元素的特点：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#定位">定位</a><ul>
+<li><a href="#相对定位position-relative">相对定位：position: relative;</a><ul>
+<li><a href="#box-shadow-盒子投影阴影">box-shadow 盒子投影（阴影）</a></li>
+<li><a href="#border-radius-边框圆角">border-radius 边框圆角</a></li>
+</ul>
+</li>
+<li><a href="#绝对定位">绝对定位</a><ul>
+<li><a href="#脱离文档流的元素都有共同的特点">脱离文档流的元素都有共同的特点：</a></li>
+</ul>
+</li>
+<li><a href="#固定定位">固定定位</a></li>
+<li><a href="#定位元素的层级关系">定位元素的层级关系</a></li>
+</ul>
+</li>
+<li><a href="#ps的快捷键">ps的快捷键</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2 id="复习">复习</h2>
+
+<h3 id="盒子模型">盒子模型</h3>
+
+<ul><li>组成：content+padding+border+margin <br>
+<ul>
+<li>content：width和height – 内容的宽度和高度</li>
+<li>padding：内边距，有四个方向</li>
+<li>border：边框，边框只有宽度没有长度（高度）</li>
+<li>margin：外边距，盒子与盒子之间的距离，有四个方向<strong>margin的数值可以设置为负数</strong></li></ul></li>
+<li>margin的兼容问题 <br>
+<ul>
+<li>上下排布的两个盒子，上面的盒子有margin-bottom值，下面的盒子有margin-top值，那么这两个值同时出现的时候，会发生margin值叠加(两个值取最大值)</li>
+<li>父子元素嵌套关系的时候，如果父级元素没有padding或border，子级元素设置margin-top值的时候，那么子级元素的这个值会传递给父级元素 <br>
+<ul>
+<li>给父级元素添加overflow:hidden;属性</li>
+<li>给父级元素添加border-top值或者padding-top值</li></ul></li></ul></li>
+</ul>
+
+<h3 id="bfc-ifc">BFC IFC</h3>
+
+<h4 id="bfc-块级盒子的渲染模式">BFC 块级盒子的渲染模式</h4>
+
+<p>块级元素的特点：</p>
+
+<ul><li>从父级元素的左上角开始排列，每个元素都独占一行</li>
+<li>可以直接设置值盒子模型的所有属性</li>
+<li>不设置宽度和高度的时候，宽度是父级元素内容的宽度，高度是本身内容的高度</li>
+<li>可以嵌套所有元素 <br>
+<ul>
+<li>ul和ol里面嵌套的第一层级需是li</li>
+<li>dl里面嵌套的第一层级需是dt和dd</li>
+<li>p标签里面不能嵌套任何的块级元素</li></ul></li>
+</ul>
+
+<h4 id="ifc-行内盒子的渲染模式">IFC  行内盒子的渲染模式</h4>
+
+<p>行内元素的特点：</p>
+
+<ul><li>从父级元素的左上角开始排列，每一个元素都是从左到右在一行显示，达到父级元素最大宽度的时候，自动折行</li>
+<li>不能设置宽度，高度，设置margin和padding上下值的时候，浏览器可以识别但是不起作用</li>
+<li>宽度高度默认是本身内容的宽高</li>
+<li>行内元素不嵌套块级元素</li>
+<li>行内元素会因为元素之间的空格或者回车影响，在显示的时候，盒子和盒子之间会有间距</li>
+<li>行内元素的垂直对齐方式是基线对齐</li>
+</ul>
+
+<p>行内块级元素的特点：</p>
+
+<ul><li>从父级元素的左上角开始排列，每一个元素都是从左到右在一行显示，达到父级元素最大宽度的时候，自动折行</li>
+<li>可以直接设置盒子模型的所有属性</li>
+<li>在不设置宽高的时候，宽度高度是由内容绝对的</li>
+<li>会因为元素之间的空格或者回车影响，在显示的时候，盒子和盒子之间会有间距</li>
+<li>垂直对齐方式是基线对齐</li>
+</ul>
+
+<p>基线对齐：是指小写x的底部，只作用在行内元素和行内块级元素上 <br>
+<strong>基线对齐是指同级元素之间的垂直对齐方式</strong> <br>
+<strong>想要改变对齐方式需要给每一个元素身上都重新设置这个属性</strong></p>
+
+<h3 id="overflow-溢出">overflow 溢出</h3>
+
+<p>在html中盒子里面的内容是允许大于盒子的，那么多出的部分默认会出现在盒子的右侧和下方，溢出的部分可以通过这个属性选择不同的展现形式</p>
+
+<h3 id="水平对齐方式">水平对齐方式</h3>
+
+<h4 id="text-alignleftcenterright">text-align:left/center/right</h4>
+
+<ul><li>这个属性需要放在一个宽度大于内容的盒子身上</li>
+<li>可以直接控制文字、行内元素、行内块级元素</li>
+</ul>
+
+<h4 id="margin0-auto-让块级元素在其父级元素内居中显示">margin:0 auto; 让块级元素在其父级元素内居中显示</h4>
+
+<ul><li>控制有宽度块级元素</li>
+<li>margin的第一个值不会起到居中的左右</li>
+<li>auto 左右自适应</li>
+</ul>
+
+<h3 id="文字的垂直对齐方式">文字的垂直对齐方式</h3>
+
+<p>文字在一定高度内垂直居中 <code>line-height</code></p>
+
+<h3 id="单行文字超出部分用省略号代替">单行文字超出部分用省略号代替</h3>
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs xml"><span class="hljs-comment line-number">1.</span><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"><br><span class="hljs-comment line-number">2.</span><span class="hljs-tag">p</span><span class="hljs-rules">{<br><span class="hljs-comment line-number">3.</span>    <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;<span class="hljs-comment">/*盒子溢出隐藏*/</span><br><span class="hljs-comment line-number">4.</span>    <span class="hljs-rule"><span class="hljs-attribute">text-overflow</span>:<span class="hljs-value"> ellipsis</span></span>;<span class="hljs-comment">/*多余根本的展现形式 ellipsis省略的意思*/</span><br><span class="hljs-comment line-number">5.</span>    <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> nowrap</span></span>;<span class="hljs-comment">/*文本不换行 nowrap 不换行的意思*/</span><br><span class="hljs-comment line-number">6.</span>}</span><br><span class="hljs-comment line-number">7.</span></span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span><br></code></pre>
+
+<p><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/qianduanCSSziliao/2016-12-11/671.html" target="_blank">多行文本溢出省略方法</a></p>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs xml"><span class="hljs-comment line-number">1.</span><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"><br><span class="hljs-comment line-number">2.</span>&lt;<span class="hljs-tag">p</span> <span class="hljs-tag">class</span>="<span class="hljs-tag">text</span>"&gt;&lt;/<span class="hljs-tag">p</span>&gt;<br><span class="hljs-comment line-number">3.</span>移动端可以使用该方法 或者是<span class="hljs-tag">webkit</span>内核浏览器可以使用<br><span class="hljs-comment line-number">4.</span>    <span class="hljs-class">.text</span><span class="hljs-rules">{<br><span class="hljs-comment line-number">5.</span>        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">300px</span></span></span>;<br><span class="hljs-comment line-number">6.</span>        <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> -webkit-box</span></span>;<br><span class="hljs-comment line-number">7.</span>        <span class="hljs-rule"><span class="hljs-attribute">-webkit-box-orient</span>:<span class="hljs-value"> vertical</span></span>;<br><span class="hljs-comment line-number">8.</span>        <span class="hljs-rule"><span class="hljs-attribute">-webkit-line-clamp</span>:<span class="hljs-value"> <span class="hljs-number">3</span></span></span>;<br><span class="hljs-comment line-number">9.</span>        <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;<br><span class="hljs-comment line-number">10.</span>    }</span><br><span class="hljs-comment line-number">11.</span></span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span><br></code></pre>
+
+<h2 id="浮动-float">浮动 float</h2>
+
+<table>
+<thead>
+<tr>
+  <th>属性值</th>
+  <th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>left</td>
+  <td>从左到右依次在一行显示</td>
+</tr>
+<tr>
+  <td>right</td>
+  <td>从右到左依次在一行显示</td>
+</tr>
+<tr>
+  <td>none</td>
+  <td>不浮动</td>
+</tr>
+<tr>
+  <td>inherit</td>
+  <td>从父级元素的该属性中继承</td>
+</tr>
+</tbody></table>
+
+
+<p>浮动最初的作用是为了实现文字围绕盒子的排版</p>
+
+<p><strong>文档流：</strong>就是块级元素和行内元素默认的排布方式 <br>
+<strong>脱离文档流：</strong>文档流内的正常元素识别不到这个元素了（脱离文档流的元素相当于平行漂浮在文档流之上）</p>
+
+<h3 id="解决文档流元素不识别浮动元素的方法">解决文档流元素不识别浮动元素的方法</h3>
+
+<p></p><ul><li>给浮动元素的父级元素添加固定的高度</li>
+<li>给浮动元素的父级元素添加溢出隐藏属性</li>
+<li>在最后一个浮动元素后面添加一个块级元素，这个块级元素带有clear:both;属性 <br>
+<ul>
+<li><strong>clear</strong>清除浮动元素对文档流内元素的影响（可以让文档流内的元素识别到浮动元素的高度）</li>
+<li>left          清除float为left的影响</li>
+<li>right        清除float为right的影响</li>
+<li>both        清除float所有的影响</li>
+<li>inherit     从父级元素上继承该属性值 <br></li></ul></li></ul><p></p>
+
+<blockquote>
+  <p>带有clear属性的元素需要有一下几个特点： <br></p>
+  
+  <ul><li>元素需是块级元素 <br></li>
+  <li>元素不能带有浮动属性 <br></li>
+  <li>元素必须放在最后一个浮动元素的后面 <br></li>
+  <li>用户是看不到这个元素的</li></ul>
+   <br>
+  </blockquote>
+
+<h4 id="盒子在视野之中消失">盒子在视野之中消失</h4>
+
+<ul><li>visibility: hidden  – 盒子看不到，但是盒子所占的大小依然还在</li>
+<li>display:none  –  盒子完全从页面中消失</li>
+<li>opacity: 0   –  透明度为0（完全透明）</li>
+</ul>
+
+<h4 id="zoom">zoom</h4>
+
+<p>是专门兼容ie浏览器的，有上升的作用</p>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs gherkin"><span class="hljs-comment line-number">1.</span><span class="hljs-keyword">*</span>zoom:1;/<span class="hljs-keyword">*</span>只有ie7可识别<span class="hljs-keyword">*</span>/<br><span class="hljs-comment line-number">2.</span>/<span class="hljs-keyword">*</span><br><span class="hljs-comment line-number">3.</span><span class="hljs-keyword">*</span>属性名 的方式是 css属性名hack<br><span class="hljs-comment line-number">4.</span>“<span class="hljs-keyword">*</span>” 是用来兼容ie7版本浏览器<br><span class="hljs-comment line-number">5.</span><span class="hljs-keyword">*</span>/<br></code></pre>
+
+<h4 id="清除浮动">清除浮动</h4>
+
+
+
+<pre class="prettyprint with-line-number hljs-light"><code class="hljs less"><span class="hljs-comment line-number">1.</span>浮动元素的父级选择器{*<span class="hljs-attribute">zoom</span>:<span class="hljs-number">1</span>;}<br><span class="hljs-comment line-number">2.</span>浮动元素的父级选择器<span class="hljs-pseudo">:after</span>{<br><span class="hljs-comment line-number">3.</span><span class="hljs-attribute">display</span>:block;<br><span class="hljs-comment line-number">4.</span><span class="hljs-attribute">content</span>:<span class="hljs-string">""</span>;<br><span class="hljs-comment line-number">5.</span><span class="hljs-attribute">clear</span>:both;<br><span class="hljs-comment line-number">6.</span>}<br><span class="hljs-comment line-number">7.</span><span class="hljs-class">.clearfix</span>{*<span class="hljs-attribute">zoom</span>:<span class="hljs-number">1</span>;}<br><span class="hljs-comment line-number">8.</span><span class="hljs-class">.clearfix</span><span class="hljs-pseudo">:after</span>{<br><span class="hljs-comment line-number">9.</span><span class="hljs-attribute">display</span>:block;<br><span class="hljs-comment line-number">10.</span><span class="hljs-attribute">content</span>:<span class="hljs-string">""</span>;<br><span class="hljs-comment line-number">11.</span><span class="hljs-attribute">clear</span>:both;<br><span class="hljs-comment line-number">12.</span><span class="hljs-attribute">height</span>:<span class="hljs-number">0</span>;<span class="hljs-comment">/*如果是在ie低版本浏览器下展示，有时候浏览器会默认空元素有1px的高度*/</span><br><span class="hljs-comment line-number">13.</span><span class="hljs-attribute">visibility</span>: hidden;<span class="hljs-comment">/*为了防止元素内有内容显示出来*/</span><br><span class="hljs-comment line-number">14.</span>}<br><span class="hljs-comment line-number">15.</span><span class="hljs-comment">/*ie低版本是指ie6 7 8*/</span><br></code></pre>
+
+<h4 id="浮动元素的特点">浮动元素的特点：</h4>
+
+<ul><li>脱离文档流</li>
+<li>设置属性值为left时，浮动元素会依次从父级盒子的左侧向右排布，设置属性值为right时，浮动元素会依次从父级盒子的右侧向左排布</li>
+<li>可以直接设置盒子模型的所有属性</li>
+<li>不设置宽度高度的时候，宽高是本身内容的宽高</li>
+<li>浮动元素内的子元素，不会继承浮动属性，还是按照BFC和IFC模式进行排版</li>
+<li>在遇到父级盒子宽度最大值的时候，会自动折行</li>
+</ul>
+
+<h2 id="定位">定位</h2>
+
+
+
+<h3 id="相对定位position-relative">相对定位：position: relative;</h3>
+
+<p>元素通过上下左右四个方向的数值改变，来改变该元素在页面上的位置 <br>
+参照物是这个元素本身位置 <br>
+特点：</p>
+
+<ul><li>参照物是元素本身位置；</li>
+<li>没有脱离文档流；</li>
+<li>当top和bottom同时有值的情况下，top值生效；</li>
+<li>当left和right同时有值的情况下，left值生效；</li>
+<li>任何元素都可以设置相对定位属性；</li>
+<li>属性值支持负值</li>
+<li>相对定位元素位移发生改变，但是元素原来的位置还会被占用，其他元素还是正常识别这个元素原来的位置</li>
+</ul>
+
+<h4 id="box-shadow-盒子投影阴影">box-shadow 盒子投影（阴影）</h4>
+
+<p>第一个值：x轴移动距离 正值向右 负值向左 <br>
+第二个值：y轴移动距离 正值下下 负值向上 <br>
+第三个值：模糊半径 没有负值 <br>
+第四个值：阴影的投射范围，值越大阴影范围越大，支持负值（可省略） <br>
+第五个值：阴影的颜色 <br>
+第六个值：不写代表外阴影，inset代表内阴影 <br>
+ps：box-shadow是css3的属性，所以ie低版本浏览器不支持</p>
+
+<h4 id="border-radius-边框圆角">border-radius 边框圆角</h4>
+
+<p>border-radius:10px 20px 30px 40px; <br>
+border-radius:10px 20px 40px; <br>
+border-radius:10px 20px; <br>
+border-radius:10px; <br>
+border-top-left-radius: 10px; <br>
+border-top-right-radius: 30px; <br>
+border-bottom-right-radius: 40px; <br>
+border-bottom-left-radius: 50px; <br>
+ps：border-radius是css3的属性，所以ie低版本浏览器不支持</p>
+
+<h3 id="绝对定位">绝对定位</h3>
+
+<p>特点：</p>
+
+<ul><li>脱离文档流</li>
+<li>可以设置参照物，参照物必须是其父级元素（直系父级）</li>
+<li>如果是同一个参照物，所有定位元素都会去找同一个起点</li>
+<li>可以设置层级关系</li>
+</ul>
+
+<p>参照物：</p>
+
+<ul><li>默认参照物是盒子在画布出现的第一个位置</li>
+<li>自定义参照物： <br>
+<ul>
+<li>参照物需是直系父级元素</li>
+<li>参照物需要带有定位属性</li></ul></li>
+</ul>
+
+<p>绝对定位元素：</p>
+
+<ul><li>有宽度和高度的情况下，top和bottom同时有值，top生效；left和right同时有值，left生效；</li>
+<li>没有宽度和高度的情况下，top和bottom同时设置指的情况下，会将在这个盒子拉大，上下值都起作用，左右同理</li>
+</ul>
+
+<h4 id="脱离文档流的元素都有共同的特点">脱离文档流的元素都有共同的特点：</h4>
+
+<ul><li>不分行内和块级元素，只要脱离文档流就可以直接设置值盒子模型的所有属性</li>
+<li>宽高不设置的时候，默认是本身内容的宽高</li>
+<li>浮动元素、绝对定位元素、固定定位元素脱离文档流</li>
+</ul>
+
+<h3 id="固定定位">固定定位</h3>
+
+<p>特点</p>
+
+<ul><li>脱离文档流</li>
+<li>参照物是浏览器的可视窗口</li>
+<li>任何元素都可以设置固定定位</li>
+</ul>
+
+<h3 id="定位元素的层级关系">定位元素的层级关系</h3>
+
+<ul><li>默认是书写顺序在后的定位元素覆盖在顺序前的定位元素</li>
+<li>可以使用z-index属性修改定位元素的层级关系</li>
+<li>所有定位元素的z-index默认值都是一样的</li>
+<li>z-index值是数字没有单位，支持负数</li>
+<li>一般都是同级元素进行层级的比较</li>
+<li>当参照物是相对定位或绝对定位的时候，父级元素之间没有z-index值，子级元素的z-index值会出来做比较</li>
+</ul>
+
+<h2 id="ps的快捷键">ps的快捷键</h2>
+
+<table>
+<thead>
+<tr>
+  <th>快捷键</th>
+  <th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ctrl+R</td>
+  <td>显示标尺</td>
+</tr>
+<tr>
+  <td>ctrl+“+”</td>
+  <td>放大</td>
+</tr>
+<tr>
+  <td>ctrl+“-”</td>
+  <td>缩小</td>
+</tr>
+<tr>
+  <td>ctrl+1</td>
+  <td>1:1显示效果图</td>
+</tr>
+<tr>
+  <td>H</td>
+  <td>抓手工具【可以移动稿件】</td>
+</tr>
+<tr>
+  <td>V</td>
+  <td>移动工具 【选择和移动图层】</td>
+</tr>
+<tr>
+  <td>M</td>
+  <td>矩形选框工具 【测量盒子的大小边距】</td>
+</tr>
+<tr>
+  <td>C</td>
+  <td>切片工具 用来切图</td>
+</tr>
+<tr>
+  <td>ctrl+Z</td>
+  <td>返回上一步</td>
+</tr>
+<tr>
+  <td>ctrl+alt+Z</td>
+  <td>一直向上返回</td>
+</tr>
+</tbody></table>
+</div></body></html>
