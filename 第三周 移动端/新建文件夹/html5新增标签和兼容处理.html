@@ -1,0 +1,220 @@
+<!DOCTYPE html><html><head><title>html5新增标签和兼容处理</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h2 id="html5新增标签和兼容处理">html5新增标签和兼容处理</h2>
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><ul>
+<li><a href="#html5新增标签和兼容处理">html5新增标签和兼容处理</a><ul>
+<li><a href="#1header">1.header</a></li>
+<li><a href="#2nav">2.nav</a></li>
+<li><a href="#3section">3.section</a></li>
+<li><a href="#4article">4.article</a></li>
+<li><a href="#5aside">5.aside</a></li>
+<li><a href="#6footer">6.footer</a></li>
+<li><a href="#7hgroup">7.hgroup</a></li>
+<li><a href="#11audio">11.audio</a></li>
+<li><a href="#12video">12.video</a></li>
+<li><a href="#13canvas">13.canvas</a></li>
+<li><a href="#总结">总结：</a><ul>
+<li><a href="#1新增加一些构建页面语义化的结构标签-对原有-标签进行了修改">1、新增加一些构建页面语义化的结构标签 ，对原有 标签进行了修改</a></li>
+<li><a href="#2给我们的input表单元素增加了很多新的类型不兼容">2、给我们的INPUT表单元素增加了很多新的类型(不兼容)</a></li>
+<li><a href="#3新增加了音视频处理audiovideo">3、新增加了音视频处理AUDIO、VIDEO</a></li>
+<li><a href="#4新增加canvas绘图">4、新增加CANVAS绘图</a></li>
+<li><a href="#5新增加一些新的有助于开发的api本地存储地理位置websocketwebworks离线缓存">5、新增加一些新的有助于开发的API:本地存储、地理位置、websocket、webworks…离线缓存</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<p>在之前的HTML页面中，大家基本上都是用了Div+CSS的布局方式。而搜索引擎去抓取页面的内容的时候，它只能猜测你的某个Div内的内容是文章内容容器，或者是导航模块的容器，或者是作者介绍的容器等等。也就是说整个HTML文档结构定义不清晰，HTML5中为了解决这个问题，专门添加了：页眉、页脚、导航、文章内容等跟结构相关的结构元素标签。</p>
+
+<p>Alt text</p>
+
+
+
+<h3 id="1header">1.header</h3>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml">标签定义文档的页眉,通常是一些引导和导航信息，它不局限写在网页头部，也可以写在网页内容里面。通常<span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span>标签至少包含（但不局限于）一个标题标记(<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>~<span class="hljs-tag">&lt;<span class="hljs-title">h6</span>&gt;</span>),还可以包括<span class="hljs-tag">&lt;<span class="hljs-title">hgroup</span>&gt;</span>标签，还可以包括表格内容、标识、搜索表单、<span class="hljs-tag">&lt;<span class="hljs-title">nav</span>&gt;</span>导航等；<br></code></pre>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><br><span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">hgroup</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>网站标题<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>网站副标题<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-title">hgroup</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span><br><br></code></pre>
+
+
+
+<h3 id="2nav">2.nav</h3>
+
+<p>nav标签代表页面的一个部分,是一个可以作为页面导航的链接组，其中的导航元素链接到其他页面或者当前页面的其他部分，使html代码在语义化方面更加精确，同时对于屏幕阅读器等设备的支持也更好；</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>珠峰培训首页<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>node培训课程<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>html5培训课程<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>珠峰论坛<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span><br><br></code></pre>
+
+
+
+<h3 id="3section">3.section</h3>
+
+<pre class="prettyprint hljs-dark"><code class="hljs x86asm"><span class="hljs-built_in">section</span>标签，定义文档中的节。比如章节、页眉、页脚或文档中的其他部分。一般用于成节的内容，会在文档流中开始一个新的节。它用来表现普通的文档内容或应用区块，通常由内容及其标题组成。但<span class="hljs-built_in">section</span>元素标签并非一个普通的容器元素，它表示一段专题性的内容，一般会带有标题。<br></code></pre>
+
+<p>当我们描述一件具体的事物的时候，通常鼓励使用artice来代替section;当我们使用section时，仍然可以使用h1来作为标题，而不用担心它所处的位置，以及其它地方是否用到;当一个容器需要被直接定义样式或通过脚本定义行为时，推荐使用div元素而非section;</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">section</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>section是什么？<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>是一个独立的章节<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">article</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>关于section<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>section的介绍<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span><br></code></pre>
+
+
+
+<h3 id="4article">4.article</h3>
+
+<p>article是一个特殊的section标签，它比section具有更明确的语义，它代表一个独立的，完整的相关内容块，可独立于页面其他内容使用。例如一篇完整的论坛帖子，一篇博客文章，一个用户评论等等。一般来说，article会有标题部分(通常包含在header内),有时也会包含footer。article可以嵌套，内层的article对外层的article标签有隶属关系。例如，一篇博客文章，可以用article显示，然后一些评论可以以article的形式嵌入其中;</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">article</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-title">hgroup</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>这是一篇介绍HTML 5结构标签的文章<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>HTML 5的革新<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span><br>       <span class="hljs-tag">&lt;/<span class="hljs-title">hgroup</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-title">time</span> <span class="hljs-attribute">datetime</span>=<span class="hljs-value">"2016-11-18"</span>&gt;</span>2016.11.18<span class="hljs-tag">&lt;/<span class="hljs-title">time</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>文章内容详情<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span><br></code></pre>
+
+
+
+<h3 id="5aside">5.aside</h3>
+
+<p>aside标签用来装载非正文的内容，被视为页面里面一个单独的部分。它包含的内容与页面的主要内容是分开的，可以被删除，而不会影响网页的内容、章节或是页面所要传达的信息。例如广告，成组的链接，侧边栏等等。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">aside</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>简介<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>我是简介内容，嘿嘿<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-title">aside</span>&gt;</span><br></code></pre>
+
+
+
+<h3 id="6footer">6.footer</h3>
+
+<p>footer标签定义section或document的页脚，包含了与页面、文章或是内容有关的信息，比如说文章的作者或者日期。作为页面的页脚时，一般包含了版权、相关文件和链接。它和header标签使用基本一样，可以在一个页面中多次使用，如果在一个区段的后面加入footer,那么它就相当于该区段的页脚了。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">footer</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>copyRight@珠峰培训<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span><br></code></pre>
+
+
+
+<h3 id="7hgroup">7.hgroup</h3>
+
+<p>hgroup标签是对网页或区段section的标题元素(h1~h6)进行组合。例如,在一区段中你有连续的h系列的标签元素，则可以用hgroup将他们括起来。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">hgroup</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>主标题<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>副标题<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-title">hgroup</span>&gt;</span><br></code></pre>
+
+<p>8.figure</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml">用作文档中插图的图像，带有一个标题<br><span class="hljs-tag">&lt;<span class="hljs-title">figure</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-title">figcaption</span>&gt;</span>标题<span class="hljs-tag">&lt;/<span class="hljs-title">figcaption</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"img.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"figure标签"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"figure标签"</span> /&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span><br></code></pre>
+
+<p>9.figcaption <br>
+标签定义figure元素的标题(caption)。”figcaption”元素应该被置于”figure”元素的第一个或最后一个子元素的位置。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">figure</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"img.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"figure标签"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"figure标签"</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-title">figcaption</span>&gt;</span>标题<span class="hljs-tag">&lt;/<span class="hljs-title">figcaption</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span><br></code></pre>
+
+<p>10.datalist <br>
+datalist标签定义选型列表。请与input元素配合使用该元素，来定义input可能的值。datalist及其选项不会被显示出来，它仅仅是合法的输入值列表。请使用input元素的list属性来 绑定datalist。所有主流浏览器都支持此标签，除了Internet Explorer和Safari。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myCar"</span> <span class="hljs-attribute">list</span>=<span class="hljs-value">"cars"</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-title">datalist</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"cars"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"BMW"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Ford"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Volvo"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-title">datalist</span>&gt;</span><br></code></pre>
+
+
+
+<h3 id="11audio">11.audio</h3>
+
+<p>定义声音，比如音乐或其它音频流：其相关的属性 <br>
+autoplay 如果出现该属性，则音频在就绪后马上播放; <br>
+controls 如果出现该属性，则向用户显示控件，比如播放按钮; <br>
+loop 如果出现该属性，则每当音频结束时重新开始播放； <br>
+muted 规定视频输出应该被静音； <br>
+preload 如果出现该属性，则音频在页面加载时进行加载，并预备播放,如果出现”autoplay”则忽略该属性； <br>
+src 要播放的音频的url</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"audio"</span> <span class="hljs-attribute">preload</span>=<span class="hljs-value">"auto"</span> <span class="hljs-attribute">autoplay</span>=<span class="hljs-value">"autoplay"</span> <span class="hljs-attribute">loop</span>=<span class="hljs-value">"loop"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://song4u.u.qiniudn.com/blog/audio/gt.mp3"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-title">audio</span>&gt;</span><br></code></pre>
+
+
+
+<h3 id="12video">12.video</h3>
+
+<p>定义视频，比如电影片段或其它视频流：其相关的属性 <br>
+autoplay 如果出现该属性，则视频在就绪后马上播放; <br>
+controls 如果出现该属性，则向用户显示控件，比如播放按钮; <br>
+height 设置视频播放器的高度; <br>
+loop 如果出现该属性，则当媒介文件完成播放后再次开始播放； <br>
+preload 如果出现该属性，则视频在页面加载时进行加载，并预备播放,如果出现”autoplay”则忽略该属性； <br>
+src 要播放的音频的url； <br>
+width 设置视频播放器的宽度；</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs stylus">&lt;<span class="hljs-tag">video</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"320"</span> <span class="hljs-attribute">height</span>=<span class="hljs-string">"240"</span> controls&gt;<br>    &lt;source src=<span class="hljs-string">"movie.mp4"</span> type=<span class="hljs-string">"video/mp4"</span>&gt;<br>    &lt;source src=<span class="hljs-string">"movie.ogg"</span> type=<span class="hljs-string">"video/ogg"</span>&gt;<br>    您的浏览器不支持 <span class="hljs-tag">video</span> 标签。<br>&lt;/video&gt;<br></code></pre>
+
+
+
+<h3 id="13canvas">13.canvas</h3>
+
+<p>canvas标签定义图形，比如图表和其他图像，canvas标签只是图形容器，您必须使用脚本来绘制图形;</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">canvas</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myCanvas"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">canvas</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript"><br><span class="hljs-keyword">var</span> canvas=<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myCanvas'</span>);<br><span class="hljs-keyword">var</span> ctx=canvas.getContext(<span class="hljs-string">'2d'</span>);<br>ctx.fillStyle=<span class="hljs-string">'#FF0000'</span>;<br>ctx.fillRect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">80</span>,<span class="hljs-number">100</span>);<br></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span><br></code></pre>
+
+
+
+<h3 id="总结">总结：</h3>
+
+
+
+<h4 id="1新增加一些构建页面语义化的结构标签-对原有-标签进行了修改">1、新增加一些构建页面语义化的结构标签 ，对原有 标签进行了修改</h4>
+
+<p>header、nav、section、footer、article、aside、figure、figcaption、hgroup…  <br>
+Alt text</p>
+
+<p>(在IE6~8浏览器中不识别这些新增加的标签,导致布局结构混乱)在页面中引入  <br>
+<!--[if lt IE 9]&gt;  &lt;br&gt;&#10; &lt;script type=&#34;text/javascript&#34; src=&#34;HTML5.min.js&#34;&gt;&lt;/script&gt;  &lt;br&gt;&#10; &lt;![endif]--> </p>
+
+
+
+<h4 id="2给我们的input表单元素增加了很多新的类型不兼容">2、给我们的INPUT表单元素增加了很多新的类型(不兼容)</h4>
+
+<p>原有:text、password、radio、checkbox、button、submit、reset、file…  <br>
+新增:search、url、email、tel、number、date、time、color、range…  <br>
+作用:  <br>
+1)根据TYPE的类型不一样,会调取出最符合用户输入的物理键盘;  <br>
+2)传统的表单验证:当某个行为触发的时候,我们获取用户输入的内容和自己编写的正则进行验证从而判断用户输入的是否符合规则;  <br>
+3) HTML5中提供了CSS3/JS的新验证方式,不需要自己写正则,浏览器自己就已经实现了验证,我们只需要控制成功/不成功的样式或者其他操作即可</p>
+
+
+
+<h4 id="3新增加了音视频处理audiovideo">3、新增加了音视频处理AUDIO、VIDEO</h4>
+
+
+
+<h4 id="4新增加canvas绘图">4、新增加CANVAS绘图</h4>
+
+<p><a href="http://www.hcharts.cn/(Highcharts)" target="_blank">http://www.hcharts.cn/(Highcharts)</a>  <br>
+<a href="http://echarts.baidu.com/(echarts)" target="_blank">http://echarts.baidu.com/(echarts)</a>  <br>
+ D3.js</p>
+
+
+
+<h4 id="5新增加一些新的有助于开发的api本地存储地理位置websocketwebworks离线缓存">5、新增加一些新的有助于开发的API:本地存储、地理位置、websocket、webworks…离线缓存</h4></div></body></html>
